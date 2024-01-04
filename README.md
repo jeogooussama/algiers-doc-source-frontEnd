@@ -1,7 +1,4 @@
-**Schema**
-
-**
-App
+**App**
 ├── BrowserRouter
 │   └── Routes
 │       ├── Route (path="/")
@@ -64,4 +61,3 @@ App
         ├── Grid (Social Media Links)
         ├── Grid (Navigation Links)
         └── Typography (Copyright)
-**

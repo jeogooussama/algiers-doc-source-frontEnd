@@ -7,7 +7,7 @@ const InterFaces = () => {
   const location = useLocation();
   const currentLangParam = location.pathname.split("/")[1];
 
-  const [searchParams, setSearchParams] = useState({ selectedLanguage: "all", searchTerm: "" });
+  const [searchParams, setSearchParams] = useState({ selectedLanguage: "all", selectedWilaya: "all", searchTerm: "" });
 
   const handleSearch = (params) => {
     setSearchParams(params);
@@ -16,6 +16,7 @@ const InterFaces = () => {
   const filteredInterfaces = fakeData.interfaces.filter(
     (item) =>
       (item.language === searchParams.selectedLanguage || searchParams.selectedLanguage === "all") &&
+      (item.wilaya === searchParams.selectedWilaya || searchParams.selectedWilaya === "all") &&
       item.title.toLowerCase().includes(searchParams.searchTerm.toLowerCase())
   );
 

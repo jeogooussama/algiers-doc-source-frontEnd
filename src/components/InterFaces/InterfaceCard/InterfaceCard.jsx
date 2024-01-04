@@ -3,30 +3,31 @@
 import { Card, CardContent, Typography, Box, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+
 const InterfaceCard = ({ id, title, language }) => {
-  const location = useLocation();
-  const currentLangParam = location.pathname.split("/")[1];
+  const { pathname } = useLocation();
+  const currentLangParam = pathname.split("/")[1];
+
   return (
     <Link component={RouterLink} to={`/${currentLangParam}/interfaces/${id}`} underline="none">
-            <Card
+      <Card
         sx={{
           borderRadius: 8,
           height: "100%",
           boxShadow: 4,
           position: "relative",
           overflow: "hidden",
-          border: "2px solid #2e7d32", // Green border
+          border: "2px solid #2e7d32",
           transition: "border-color 0.3s, box-shadow 0.3s",
           "&:hover": {
-            borderColor: "#1976D2", // Updated hover color to a shade of blue
-            boxShadow: "0 0 10px #1976D2", // Updated hover shadow color
+            borderColor: "#1976D2",
+            boxShadow: "0 0 10px #1976D2",
             "& .text-block": {
               opacity: 1,
             },
           },
         }}
       >
-        {/* Use https://via.placeholder.com for image */}
         <Box
           component="img"
           alt={title}
@@ -51,14 +52,14 @@ const InterfaceCard = ({ id, title, language }) => {
               borderRadius: 8,
               opacity: 0,
               transition: "opacity 0.3s",
-              backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
             }}
           >
-            <Typography variant="h6" color="#2e7d32"> {/* Green text color */}
+            <Typography variant="h6" color="#2e7d32">
               {title}
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
-              Language: {language}
+              اللغة: {language}
             </Typography>
           </Box>
         </CardContent>

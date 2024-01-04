@@ -1,4 +1,3 @@
-// SearchBar.jsx
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { SearchOutlined } from "@mui/icons-material";
@@ -13,13 +12,9 @@ import {
   Autocomplete,
   InputAdornment,
 } from "@mui/material";
-import { useLocation } from "react-router-dom";
-import translations from "./SearchBarTranslations"; // Import translations
+import fakeData from "../../fakeData"; // Import fakeData
 
 const SearchBar = ({ onSearch }) => {
-  const location = useLocation();
-  const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
-
   const [selectedLanguage, setSelectedLanguage] = useState("all");
   const [selectedWilaya, setSelectedWilaya] = useState("all");
   const [filteredData, setFilteredData] = useState([]);
@@ -28,14 +23,7 @@ const SearchBar = ({ onSearch }) => {
   useEffect(() => {
     const fetchData = async () => {
       // Simulating an asynchronous data fetch
-      const data = [
-        { title: "Interface 1", language: "en", wilaya: "Algiers" },
-        { title: "Interface 2", language: "fr", wilaya: "Oran" },
-        { title: "Interface 3", language: "ar", wilaya: "Constantine" },
-        { title: "Interface 4", language: "en", wilaya: "Tizi Ouzou" },
-        { title: "Interface 5", language: "fr", wilaya: "Annaba" },
-        { title: "Interface 6", language: "ar", wilaya: "Setif" },
-      ];
+      const data = fakeData.interfaces;
 
       // Sample algorithm: Filter data based on selected language, wilaya, and search term
       const filteredResults =
@@ -61,7 +49,7 @@ const SearchBar = ({ onSearch }) => {
   }, [selectedLanguage, selectedWilaya, searchTerm, onSearch]);
 
   // Wilayas data
-  const wilayas = ["Algiers", "Oran", "Constantine", "Tizi Ouzou", "Annaba", "Setif"];
+  const wilayas = [...new Set(fakeData.interfaces.map((item) => item.wilaya))];
 
   return (
     <Container
@@ -92,32 +80,34 @@ const SearchBar = ({ onSearch }) => {
       >
         {/* Language Select */}
         <FormControl variant="outlined" sx={{ width: { xs: "100%", md: "100px" } }}>
-          <InputLabel id="language-label">{translations[currentLanguage].selectLanguage}</InputLabel>
+          <InputLabel id="language-label">اختر اللغة</InputLabel>
           <Select
             labelId="language-label"
             id="language-select"
             value={selectedLanguage}
             onChange={(e) => setSelectedLanguage(e.target.value)}
-            label={translations[currentLanguage].selectLanguage}
+            label="اختر اللغة"
           >
-            <MenuItem value="all">{translations[currentLanguage].all}</MenuItem>
-            <MenuItem value="en">{translations[currentLanguage].english}</MenuItem>
-            <MenuItem value="fr">{translations[currentLanguage].french}</MenuItem>
-            <MenuItem value="ar">{translations[currentLanguage].arabic}</MenuItem>
+            <MenuItem value="all">الكل</MenuItem>
+            {[...new Set(fakeData.interfaces.map((item) => item.language))].map((lang) => (
+              <MenuItem key={lang} value={lang}>
+                {lang}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
 
         {/* Wilaya Select */}
         <FormControl variant="outlined" sx={{ width: { xs: "100%", md: "100px" } }}>
-          <InputLabel id="wilaya-label">{translations[currentLanguage].selectWilaya}</InputLabel>
+          <InputLabel id="wilaya-label">اختر الولاية</InputLabel>
           <Select
             labelId="wilaya-label"
             id="wilaya-select"
             value={selectedWilaya}
             onChange={(e) => setSelectedWilaya(e.target.value)}
-            label={translations[currentLanguage].selectWilaya}
+            label="اختر الولاية"
           >
-            <MenuItem value="all">{translations[currentLanguage].all}</MenuItem>
+            <MenuItem value="all">الكل</MenuItem>
             {wilayas.map((wilaya) => (
               <MenuItem key={wilaya} value={wilaya}>
                 {wilaya}
@@ -166,6 +156,8 @@ const SearchBar = ({ onSearch }) => {
           )}
         />
       </Box>
+
+      {/* Pass filteredData to InterfacesContainer */}
     </Container>
   );
 };
