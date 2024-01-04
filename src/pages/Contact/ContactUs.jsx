@@ -1,6 +1,6 @@
 // ContactUs.jsx
 import { Container, Typography, Grid, Paper, Box, TextField, Button } from "@mui/material";
-import { Footer, Navbar } from "../../components/inedx";
+import { Footer, Navbar } from "../../components/";
 import { useLocation } from "react-router-dom";
 import translations from "./ContactUsTranslations"; // Import translations
 

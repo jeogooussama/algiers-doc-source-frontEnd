@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Footer, InterfacesContainer, Navbar, SearchBar } from "../../components/inedx";
 import fakeData from "../../fakeData";
+import { Footer, InterfacesContainer, Navbar, SearchBar } from "../../components";
 
 const InterFaces = () => {
   const location = useLocation();

@@ -56,10 +56,10 @@ const Footer = () => {
         <Grid item xs={12} md={4}>
           <Typography variant="h6">{translations[currentLanguage].quickLinks}</Typography>
           <Box sx={{ mt: 2, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <Link href="/about-us" color="inherit" sx={{ my: 1, textDecoration: 'none', fontWeight: 'bold' }}>
+            <Link href={`/${currentLanguage}/about-us`} color="inherit" sx={{ my: 1, textDecoration: 'none', fontWeight: 'bold' }}>
               {translations[currentLanguage].aboutMe}
             </Link>
-            <Link href="/contact-us" color="inherit" sx={{ my: 1, textDecoration: 'none', fontWeight: 'bold' }}>
+            <Link href={`/${currentLanguage}/contact-us`}color="inherit" sx={{ my: 1, textDecoration: 'none', fontWeight: 'bold' }}>
               {translations[currentLanguage].contact}
             </Link>
           </Box>

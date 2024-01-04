@@ -2,8 +2,8 @@
 import { Container, Typography, Grid, Paper, Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import translations from "./AboutUsTranslations"; // Import translations
-import { Navbar,Footer } from "../../components/inedx";
-
+import { Navbar,Footer } from "../../components/";
+import image from "./engineering_team.svg"
 const AboutUs = () => {
   const location = useLocation();
   const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
@@ -29,9 +29,9 @@ const AboutUs = () => {
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
               <img
-                src="https://via.placeholder.com/600x400"
+                src={image}
                 alt="Team"
-                style={{ width: "100%", height: "auto", borderRadius: 16 }}
+                style={{ width: "100%", height: "auto", borderRadius: 16, display:"block" }}
               />
             </Grid>
 

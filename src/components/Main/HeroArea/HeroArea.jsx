@@ -2,12 +2,12 @@
 import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import translations from "./HeroAreaTranslations"; // Import translations
-
+import photocopy from "../../../assets/organizing.svg"
 const mainHeadingKey = "mainHeading";
 const subHeadingKey = "subHeading";
 const exploreButtonLabelKey = "exploreButtonLabel";
 const learnMoreButtonLabelKey = "learnMoreButtonLabel";
-const imageUrl = "https://via.placeholder.com/800x400"; // Replace with your actual image URL
+const imageUrl = photocopy; // Replace with your actual image URL
 
 const HeroArea = () => {
   const location = useLocation();

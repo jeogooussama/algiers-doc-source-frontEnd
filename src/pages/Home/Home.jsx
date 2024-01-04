@@ -1,4 +1,4 @@
-import { Footer, HeroArea, Navbar, SearchBar, Usage } from "../../components/inedx";
+import { Footer, HeroArea, Navbar, SearchBar, Usage } from "../../components/";
 
 const Home = () => {
   return (

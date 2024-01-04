@@ -1,6 +1,6 @@
 // InterfaceDetailsPage.jsx
 import { useParams } from "react-router-dom";
-import { InterfaceDetails, Navbar, Footer } from "../../components/inedx";
+import { InterfaceDetails, Navbar, Footer } from "../../components/";
 import fakeData from "../../fakeData";
 
 const InterfaceDetailsPage = () => {
