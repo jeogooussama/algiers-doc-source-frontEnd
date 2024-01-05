@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+=======
+// InterfaceFilter.jsx
+import { useState } from "react";
+import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
 import ClearIcon from "@mui/icons-material/Clear";
 
 const InterfaceFilter = ({ onSelect, onSearch }) => {
@@ -44,6 +50,7 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
           onChange={handleFilterChange}
           sx={{ height: "100%" }}
         >
+<<<<<<< HEAD
           <MenuItem value="" sx={{ color: "#FD5E53", height: "100%" }}>
             الكل
           </MenuItem>
@@ -51,6 +58,15 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
             واجهات مشاريع
           </MenuItem>
           <MenuItem value="ورق مخطط" sx={{ color: "#FD5E53", height: "100%" }}>
+=======
+          <MenuItem value="" sx={{ color: "black", height: "100%" }}>
+            الكل
+          </MenuItem>
+          <MenuItem value="واجهات مشاريع" sx={{ color: "black", height: "100%" }}>
+            واجهات مشاريع
+          </MenuItem>
+          <MenuItem value="ورق مخطط" sx={{ color: "black", height: "100%" }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
             ورق مخطط
           </MenuItem>
         </Select>
@@ -66,7 +82,11 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
         InputProps={{
           endAdornment: (
             <IconButton onClick={handleReset} size="small">
+<<<<<<< HEAD
               <ClearIcon sx={{ color: "#FD5E53" }} />
+=======
+              <ClearIcon />
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
             </IconButton>
           ),
         }}
@@ -74,9 +94,14 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
       <Button
         variant="outlined"
         onClick={handleReset}
+<<<<<<< HEAD
         sx={{ marginLeft: 1, height: "100%", color: "#21BF73" }}
       >
         <SearchIcon sx={{ marginRight: 1 }} />
+=======
+        sx={{ marginLeft: 1, height: "100%", color: "green" }}
+      >
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
         إعادة تعيين
       </Button>
     </Stack>

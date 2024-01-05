@@ -42,7 +42,11 @@ const HeroArea = () => {
             >
               <Typography
                 variant="h2"
+<<<<<<< HEAD
                 color="#21BF73"
+=======
+                color="#2e7d32"
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                 sx={{
                   fontSize: { xs: "2rem", md: "3rem" },
                   fontWeight: 700,
@@ -58,7 +62,10 @@ const HeroArea = () => {
                   fontSize: { xs: "1.2rem", md: "1.5rem" },
                   marginBottom: 3,
                   textAlign: "left",
+<<<<<<< HEAD
                   color: "#FD5E53",
+=======
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                   lineHeight: "1.5",
                 }}
               >
@@ -77,16 +84,28 @@ const HeroArea = () => {
                     marginRight: { xs: 0, md: 2 },
                     padding: "10px",
                     borderRadius: "5px",
+<<<<<<< HEAD
                     backgroundColor: "#21BF73",
                     cursor: "pointer",
                     transition: "background-color 0.3s",
                     "&:hover": {
                       backgroundColor: "#21BF80",
+=======
+                    backgroundColor: "#4CAF50",
+                    cursor: "pointer",
+                    transition: "background-color 0.3s",
+                    "&:hover": {
+                      backgroundColor: "#388E3C",
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                     },
                   }}
                 >
                   <Link to={"/ar/interfaces"} style={{ textDecoration: 'none' }}>
+<<<<<<< HEAD
                     <Typography variant="button" color="#F9FCFB">
+=======
+                    <Typography variant="button" color="white">
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                       استكشاف التنزيلات مجانًا
                     </Typography>
                   </Link>
@@ -96,7 +115,11 @@ const HeroArea = () => {
                   sx={{
                     padding: "10px",
                     borderRadius: "5px",
+<<<<<<< HEAD
                     border: "2px solid #FD5E53",
+=======
+                    border: "2px solid #f44336",
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                     cursor: "pointer",
                     transition: "border-color 0.3s",
                     "&:hover": {
@@ -105,7 +128,11 @@ const HeroArea = () => {
                   }}
                 >
                   <Link to={"/ar/about-us"} style={{ textDecoration: 'none' }}>
+<<<<<<< HEAD
                     <Typography variant="button" color="#FD5E53">
+=======
+                    <Typography variant="button" color="#f44336">
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
                       من نحن ؟
                     </Typography>
                   </Link>

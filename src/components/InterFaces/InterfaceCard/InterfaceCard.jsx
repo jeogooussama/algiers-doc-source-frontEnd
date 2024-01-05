@@ -13,6 +13,7 @@ const InterfaceCard = ({ id, title, language }) => {
         sx={{
           borderRadius: 8,
           height: '100%',
+<<<<<<< HEAD
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
           position: 'relative',
           overflow: 'hidden',
@@ -21,6 +22,16 @@ const InterfaceCard = ({ id, title, language }) => {
           '&:hover': {
             borderColor: '#21BF73',
             boxShadow: '0 0 10px rgba(33, 191, 115, 0.8)',
+=======
+          boxShadow: 4,
+          position: 'relative',
+          overflow: 'hidden',
+          border: '2px solid #2e7d32',
+          transition: 'border-color 0.3s, box-shadow 0.3s',
+          '&:hover': {
+            borderColor: '#2e7d32',
+            boxShadow: '0 0 10px #2e7d32',
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
             '& .text-block': {
               opacity: 1,
             },
@@ -46,12 +57,20 @@ const InterfaceCard = ({ id, title, language }) => {
           <Box
             className="text-block"
             sx={{
+<<<<<<< HEAD
               color: '#21BF73',
+=======
+              color: 'black',
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               padding: '10px',
               borderRadius: 8,
               opacity: 0,
               transition: 'opacity 0.3s',
+<<<<<<< HEAD
               backgroundColor: 'rgba(33, 191, 115, 0.8)',
+=======
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               textAlign: 'right', // Adjusted text alignment
             }}
           >

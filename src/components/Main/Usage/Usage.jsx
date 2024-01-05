@@ -13,6 +13,7 @@ const Usage = () => {
   return (
     <Container
       maxWidth="xl"
+<<<<<<< HEAD
       sx={{ backgroundColor: '#B0EACD', padding: '40px 0', textAlign: 'center', direction: 'rtl' }}
     >
       <Box
@@ -20,6 +21,15 @@ const Usage = () => {
       >
         <Help />
         <Typography variant="h5" sx={{ color: '#FD5E53' }}>
+=======
+      sx={{ backgroundColor: '#2e7d32', padding: '40px 0', textAlign: 'center', direction: 'rtl' }}
+    >
+      <Box
+        sx={{ color: '#fff', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column', gap: 1 }}
+      >
+        <Help />
+        <Typography variant="h5" sx={{ color: '#fff' }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
           {translations[currentLanguage].howToUse}
         </Typography>
       </Box>
@@ -31,9 +41,15 @@ const Usage = () => {
         mt={4}
       >
         <img className="firstArrow" alt="" srcSet={ArrowDown} width={'200px'} style={{ position: 'absolute', left: 300, top: 550 }} />
+<<<<<<< HEAD
         <Card sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2, backgroundColor: '#F9FCFB' }}>
           <CardContent>
             <IconButton sx={{ fontSize: 50, color: '#21BF73', mb: 2 }}>
+=======
+        <Card sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2 }}>
+          <CardContent>
+            <IconButton sx={{ fontSize: 50, color: '#2196F3', mb: 2 }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               <Assignment />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: 'center' }}>
@@ -44,10 +60,17 @@ const Usage = () => {
         <img alt="" srcSet={ArrowUp} width={'200px'} style={{ position: 'absolute', bottom: -230 }} />
 
         <Card
+<<<<<<< HEAD
           sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2, mr: { xs: 0, md: 2 }, backgroundColor: '#FFC107' }}
         >
           <CardContent>
             <IconButton sx={{ fontSize: 50, color: '#F9FCFB', mb: 2 }}>
+=======
+          sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2, mr: { xs: 0, md: 2 } }}
+        >
+          <CardContent>
+            <IconButton sx={{ fontSize: 50, color: '#FF5722', mb: 2 }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               <GetApp />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: 'center' }}>
@@ -58,10 +81,17 @@ const Usage = () => {
         <img alt="" srcSet={ArrowDown} width={'200px'} style={{ position: 'absolute', right: 300, top: 550 }} />
 
         <Card
+<<<<<<< HEAD
           sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2, mr: { xs: 0, md: 2 }, backgroundColor: '#4CAF50' }}
         >
           <CardContent>
             <IconButton sx={{ fontSize: 50, color: '#F9FCFB', mb: 2 }}>
+=======
+          sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', mb: 2, mr: { xs: 0, md: 2 } }}
+        >
+          <CardContent>
+            <IconButton sx={{ fontSize: 50, color: '#4CAF50', mb: 2 }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               <Edit />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: 'center' }}>
@@ -69,9 +99,15 @@ const Usage = () => {
             </Typography>
           </CardContent>
         </Card>
+<<<<<<< HEAD
         <Card sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', backgroundColor: '#2196F3' }}>
           <CardContent>
             <IconButton sx={{ fontSize: 50, color: '#F9FCFB', mb: 2 }}>
+=======
+        <Card sx={{ width: 200, height: 300, borderRadius: 10, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
+          <CardContent>
+            <IconButton sx={{ fontSize: 50, color: '#FFC107', mb: 2 }}>
+>>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
               <EmojiEvents />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: 'center' }}>
