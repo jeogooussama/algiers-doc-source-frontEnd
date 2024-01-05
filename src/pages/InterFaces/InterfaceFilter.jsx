@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 
 const InterfaceFilter = ({ onSelect, onSearch }) => {
