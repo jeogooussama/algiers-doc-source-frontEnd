@@ -26,13 +26,25 @@ const Usage = () => {
   return (
     <Container
       maxWidth="xl"
-      sx={{ backgroundColor: '#2e7d32', padding: '40px 0', textAlign: 'center', direction: 'rtl' }}
+      sx={{
+        backgroundColor: "#B0EACD",
+        padding: "40px 0",
+        textAlign: "center",
+        direction: "rtl",
+      }}
     >
       <Box
-        sx={{ color: '#fff', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column', gap: 1 }}
+        sx={{
+          color: "#FD5E53",
+          textAlign: "center",
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
+        }}
       >
         <Help />
-        <Typography variant="h5" sx={{ color: '#fff' }}>
+        <Typography variant="h5" sx={{ color: "#FD5E53" }}>
           {translations[currentLanguage].howToUse}
         </Typography>
       </Box>
