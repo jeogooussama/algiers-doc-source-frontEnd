@@ -1,5 +1,5 @@
-import  { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Use useNavigate for React Router v6
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
   Box,
@@ -13,22 +13,19 @@ import fakeData from '../../fakeData';
 import Style from './SearchBarStyle'; // Assuming you have a separate file for styles
 
 const SearchBar = () => {
-  const navigate = useNavigate(); // useNavigate instead of useHistory
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (event) => {
     event.preventDefault();
 
-    // Find the interface with the matching title
     const matchedInterface = fakeData.interfaces.find(
       (item) => item.title === searchQuery
     );
 
-    // If found, navigate to the details page
     if (matchedInterface) {
       navigate(`/ar/interfaces/${matchedInterface.id}`);
     } else {
-      // Handle not found case (e.g., show a message)
       console.log('Interface not found');
     }
   };
@@ -37,7 +34,6 @@ const SearchBar = () => {
     <form onSubmit={handleSearch}>
       <Container maxWidth="xl" sx={Style.Container}>
         <Box sx={Style.Box}>
-          {/* Autocomplete Search */}
           <Autocomplete
             options={fakeData.interfaces.map((item) => item.title)}
             freeSolo
@@ -54,15 +50,14 @@ const SearchBar = () => {
                   ...params.InputProps,
                   startAdornment: (
                     <InputAdornment position="start">
-                      <SearchOutlined />
+                      <SearchOutlined sx={{ color: '#FD5E53' }} />
                     </InputAdornment>
                   ),
                 }}
               />
             )}
           />
-          {/* Search Button */}
-          <Button type="submit" variant="contained">
+          <Button type="submit" variant="contained" sx={{ backgroundColor: '#21BF73', color: '#F9FCFB' }}>
             Search
           </Button>
         </Box>

@@ -2,8 +2,9 @@
 import { Container, Typography, Grid, Paper, Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import translations from "./AboutUsTranslations"; // Import translations
-import { Navbar,Footer } from "../../components/";
-import image from "./engineering_team.svg"
+import { Navbar, Footer } from "../../components/";
+import image from "./engineering_team.svg";
+
 const AboutUs = () => {
   const location = useLocation();
   const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
@@ -13,15 +14,15 @@ const AboutUs = () => {
       <Navbar />
 
       <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
-        <Typography variant="h4" color="#2e7d32" gutterBottom>
+        <Typography variant="h4" color="#21BF73" gutterBottom>
           {translations[currentLanguage].aboutUs}
         </Typography>
 
         <Paper
           elevation={3}
           sx={{
-            padding: { xs: "1rem", md: "2rem" },
-            background: "#f5f5f5",
+            padding: { xs: "2rem", md: "3rem" },
+            background: "#F9FCFB",
             borderRadius: 16,
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
           }}
@@ -31,12 +32,12 @@ const AboutUs = () => {
               <img
                 src={image}
                 alt="Team"
-                style={{ width: "100%", height: "auto", borderRadius: 16, display:"block" }}
+                style={{ width: "100%", height: "auto", borderRadius: 16, display: "block" }}
               />
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <Typography variant="h5" color="#2e7d32" gutterBottom>
+              <Typography variant="h5" color="#21BF73" gutterBottom>
                 {translations[currentLanguage].ourTeam}
               </Typography>
               <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
@@ -53,7 +54,7 @@ const AboutUs = () => {
         </Paper>
 
         <Box mt={4}>
-          <Typography variant="h5" color="#2e7d32" gutterBottom>
+          <Typography variant="h5" color="#21BF73" gutterBottom>
             {translations[currentLanguage].ourValues}
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>

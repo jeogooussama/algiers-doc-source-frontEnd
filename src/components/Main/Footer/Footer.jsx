@@ -9,7 +9,7 @@ const Footer = () => {
   const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
 
   return (
-    <Box sx={{ bgcolor: '#2e7d32', color: '#fff', padding: '40px 0', textAlign: 'center' }}>
+    <Box sx={{ bgcolor: '#21BF73', color: '#F9FCFB', padding: '40px 0', textAlign: 'center' }}>
       <Grid container justifyContent="center" display={"felx"} spacing={3}>
         {/* Contact Information */}
         <Grid item xs={12} md={4}>
@@ -35,17 +35,17 @@ const Footer = () => {
           <Typography variant="h6">{translations[currentLanguage].socialMedia}</Typography>
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
             <Link href="https://www.facebook.com/yourfacebook" color="inherit" sx={{ mx: 2, textDecoration: 'none', fontWeight: 'bold' }}>
-              <IconButton sx={{ '&:hover, &:active': { color: 'red' } }}>
+              <IconButton sx={{ '&:hover, &:active': { color: '#FD5E53' } }}>
                 <Facebook />
               </IconButton>
             </Link>
             <Link href="https://twitter.com/yourtwitter" color="inherit" sx={{ mx: 2, textDecoration: 'none', fontWeight: 'bold' }}>
-              <IconButton sx={{ '&:hover, &:active': { color: 'red' } }}>
+              <IconButton sx={{ '&:hover, &:active': { color: '#FD5E53' } }}>
                 <Instagram />
               </IconButton>
             </Link>
             <Link href="https://www.linkedin.com/in/yourlinkedin" color="inherit" sx={{ mx: 2, textDecoration: 'none', fontWeight: 'bold' }}>
-              <IconButton sx={{ '&:hover, &:active': { color: 'red' } }}>
+              <IconButton sx={{ '&:hover, &:active': { color: '#FD5E53' } }}>
                 <LinkedIn />
               </IconButton>
             </Link>

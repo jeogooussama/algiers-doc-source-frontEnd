@@ -30,7 +30,7 @@ const translations = {
       yourEmail: "بريدك الإلكتروني",
       yourMessage: "رسالتك",
       sendMessage: "إرسال الرسالة",
-      workFromHome: "العمل من المنزل",
+      workFromHome: "من انا ؟",
       workFromHomeMessage: "مرحبًا! أنا مطور يبلغ من العمر 19 عامًا أعمل من المنزل. لا تتردد في التواصل معي في أي وقت.",
     },
   };

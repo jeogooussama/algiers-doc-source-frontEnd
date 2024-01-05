@@ -1,7 +1,6 @@
 const Style = {
   Container: {
-    bgcolor: "#f7f7f7",
-    borderRadius: 8,
+    bgcolor: "#F9FCFB",
     boxShadow: 2,
     display: "flex",
     justifyContent: "center",

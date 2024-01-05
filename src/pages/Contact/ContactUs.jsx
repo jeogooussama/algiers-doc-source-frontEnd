@@ -1,38 +1,45 @@
 // ContactUs.jsx
-import { Container, Typography, Grid, Paper, Box, TextField, Button } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Grid,
+  Paper,
+  Box,
+  TextField,
+  Button,
+} from "@mui/material";
 import { Footer, Navbar } from "../../components/";
-import { useLocation } from "react-router-dom";
-import translations from "./ContactUsTranslations"; // Import translations
-
+import pcHome from './undraw_programming_re_kg9v.svg'
 const ContactUs = () => {
-  const location = useLocation();
-  const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
-
   return (
     <div>
       <Navbar />
 
       <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
-        <Typography variant="h4" color="#2e7d32" gutterBottom>
-          {translations[currentLanguage].contactUs}
+        <Typography variant="h4" color="#21BF73" gutterBottom>
+          اتصل بنا
         </Typography>
 
-        <Paper
-          elevation={3}
-          sx={{
-            padding: { xs: "1rem", md: "2rem" },
-            background: "#f5f5f5",
-            borderRadius: 16,
-            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h5" color="#2e7d32" gutterBottom>
-                {translations[currentLanguage].getInTouch}
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Paper
+              elevation={3}
+              sx={{
+                padding: { xs: "2rem", md: "3rem" },
+                background: "#F9FCFB",
+                borderRadius: 16,
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <Typography variant="h5" color="#21BF73" gutterBottom>
+                تواصل معنا{" "}
               </Typography>
-              <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
-                {translations[currentLanguage].questionFeedback}
+              <Typography
+                variant="body1"
+                sx={{ marginBottom: 2, color: "#333" }}
+              >
+                لديك أي استفسار أو رغبة في التواصل؟ نحن هنا للمساعدة! استخدم
+                النموذج أدناه لإرسال رسالتك.
               </Typography>
 
               {/* Contact Form */}
@@ -42,7 +49,7 @@ const ContactUs = () => {
                     <TextField
                       required
                       fullWidth
-                      label={translations[currentLanguage].yourName}
+                      label={"اسمك"}
                       variant="outlined"
                       margin="normal"
                     />
@@ -51,7 +58,7 @@ const ContactUs = () => {
                     <TextField
                       required
                       fullWidth
-                      label={translations[currentLanguage].yourEmail}
+                      label={"بريدك الإلكتروني"}
                       variant="outlined"
                       margin="normal"
                     />
@@ -62,7 +69,7 @@ const ContactUs = () => {
                       fullWidth
                       multiline
                       rows={4}
-                      label={translations[currentLanguage].yourMessage}
+                      label={"رسالتك"}
                       variant="outlined"
                       margin="normal"
                     />
@@ -71,34 +78,48 @@ const ContactUs = () => {
                     <Button
                       type="submit"
                       variant="contained"
-                      style={{ backgroundColor: "#2e7d32", color: "#fff" }}
+                      style={{ backgroundColor: "#21BF73", color: "#fff" }}
                       size="large"
                     >
-                      {translations[currentLanguage].sendMessage}
+                      إرسال الرسالة{" "}
                     </Button>
                   </Grid>
                 </Grid>
               </form>
-            </Grid>
+            </Paper>
+          </Grid>
 
-            <Grid item xs={12} md={6}>
-              <Typography variant="h5" color="#2e7d32" gutterBottom>
-                {translations[currentLanguage].workFromHome}
+          <Grid item xs={12} md={6} display={"block"}>
+            <Paper
+              elevation={3}
+              sx={{
+                padding: { xs: "2rem", md: "3rem" },
+                background: "#F9FCFB",
+                borderRadius: 16,
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <Typography variant="h5" color="#21BF73" gutterBottom>
+                من نحن؟{" "}
               </Typography>
-              <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
-                {translations[currentLanguage].workFromHomeMessage}
+              <Typography
+                variant="body1"
+                sx={{ marginBottom: 2, color: "#333" }}
+              >
+                مرحبًا! أنا مطور برمجيات يعمل من المنزل. نحن هنا لتقديم الدعم
+                والمساعدة فيما تحتاج، لا تتردد في التواصل معنا في أي وقت.
               </Typography>
 
               {/* Image or Icon for Work from Home */}
               <Box
                 component="img"
-                src="path/to/home-icon.png"
+                src={pcHome}
                 alt="Home Icon"
-                sx={{ width: "100%", height: "auto", marginTop: 2 }}
+                sx={{ width: "83%", height: "auto", marginTop: 2 }}
               />
-            </Grid>
+            </Paper>
           </Grid>
-        </Paper>
+        </Grid>
       </Container>
 
       <Footer />

@@ -26,13 +26,13 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "#2e7d32", color: "#fff" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}>
       <Toolbar>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item sx={{ display: { xs: "block", md: "none" } }}>
             <IconButton
               onClick={toggleDrawer}
-              sx={{ display: { xs: "block", md: "none" }, color: "#ff5252" }}
+              sx={{ display: { xs: "block", md: "none" }, color: "#FD5E53" }}
             >
               {isDrawerOpen ? <Close /> : <Menu />}
             </IconButton>
@@ -51,7 +51,7 @@ const Navbar = () => {
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
-                  <Home sx={{ color: "#ff5252" }} />
+                  <Home sx={{ color: "#FD5E53" }} />
                   <ListItemText primary={translations[currentLanguage].home} />
                 </ListItem>
                 <ListItem
@@ -61,7 +61,7 @@ const Navbar = () => {
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
-                  <Search sx={{ color: "#ff5252" }} />
+                  <Search sx={{ color: "#FD5E53" }} />
                   <ListItemText primary={translations[currentLanguage].interfaces} />
                 </ListItem>
                 <ListItem
@@ -71,7 +71,7 @@ const Navbar = () => {
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
-                  <Info sx={{ color: "#ff5252" }} />
+                  <Info sx={{ color: "#FD5E53" }} />
                   <ListItemText primary={translations[currentLanguage].aboutUs} />
                 </ListItem>
                 <ListItem
@@ -81,7 +81,7 @@ const Navbar = () => {
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
-                  <Mail sx={{ color: "#ff5252" }} />
+                  <Mail sx={{ color: "#FD5E53" }} />
                   <ListItemText primary={translations[currentLanguage].contactUs} />
                 </ListItem>
               </List>
@@ -94,10 +94,10 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/home`}
                   className="Button"
-                  sx={{ color: "#fff", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1 }}
                 >
                   <Home />
-                  <Typography variant="caption" sx={{ color: "#fff" }}>
+                  <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
                     {translations[currentLanguage].home}
                   </Typography>
                 </IconButton>
@@ -107,10 +107,10 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/interfaces`}
                   className="Button"
-                  sx={{ color: "#fff", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1 }}
                 >
                   <Search />
-                  <Typography variant="caption" sx={{ color: "#fff" }}>
+                  <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
                     {translations[currentLanguage].interfaces}
                   </Typography>
                 </IconButton>
@@ -120,10 +120,10 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/about-us`}
                   className="Button"
-                  sx={{ color: "#fff", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1 }}
                 >
                   <Info />
-                  <Typography variant="caption" sx={{ color: "#fff" }}>
+                  <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
                     {translations[currentLanguage].aboutUs}
                   </Typography>
                 </IconButton>
@@ -133,10 +133,10 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/contact-us`}
                   className="Button"
-                  sx={{ color: "#fff", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1 }}
                 >
                   <Mail />
-                  <Typography variant="caption" sx={{ color: "#fff" }}>
+                  <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
                     {translations[currentLanguage].contactUs}
                   </Typography>
                 </IconButton>
