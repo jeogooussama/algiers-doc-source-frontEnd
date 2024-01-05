@@ -1,30 +1,36 @@
+// InterFaces.jsx
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Footer, InterfacesContainer, Navbar } from "../../components";
+import InterfaceFilter from "./InterfaceFilter";
 import fakeData from "../../fakeData";
-import { Footer, InterfacesContainer, Navbar, SearchBar } from "../../components";
 
 const InterFaces = () => {
   const location = useLocation();
   const currentLangParam = location.pathname.split("/")[1];
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const [searchParams, setSearchParams] = useState({ selectedLanguage: "all", selectedWilaya: "all", searchTerm: "" });
-
-  const handleSearch = (params) => {
-    setSearchParams(params);
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
   };
 
-  const filteredInterfaces = fakeData.interfaces.filter(
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+  const interfacesToDisplay = fakeData.interfaces.filter(
     (item) =>
-      (item.language === searchParams.selectedLanguage || searchParams.selectedLanguage === "all") &&
-      (item.wilaya === searchParams.selectedWilaya || searchParams.selectedWilaya === "all") &&
-      item.title.toLowerCase().includes(searchParams.searchTerm.toLowerCase())
+      (item.language === currentLangParam || item.language === "ar") &&
+      (selectedCategory === "" || item.category === selectedCategory) &&
+      (searchTerm === "" || item.title.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
     <div>
       <Navbar />
-      <SearchBar onSearch={handleSearch} />
-      <InterfacesContainer interfaces={filteredInterfaces} currentLangParam={currentLangParam} />
+      <InterfaceFilter onSelect={handleCategorySelect} onSearch={handleSearch} />
+      <InterfacesContainer interfaces={interfacesToDisplay} currentLangParam={currentLangParam} />
       <Footer />
     </div>
   );

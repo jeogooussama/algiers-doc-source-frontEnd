@@ -6,6 +6,7 @@ const fakeData = {
       language: "ar",
       description: "توفر هذه الواجهة تجربة سلسة لإدارة العروض والمعاملات. تدعم عدة لغات وتأتي مع ميزات متقدمة.",
       wilaya: "الجزائر",
+      category: "واجهات مشاريع", // Added category
       image: "https://via.placeholder.com/500x300?text=واجهة+العرض+1"
     },
     {
@@ -14,6 +15,7 @@ const fakeData = {
       language: "ar",
       description: "قالب ورق مسطر مصمم بشكل جميل يعتبر مناسبًا لأغراض الكتابة وأخذ الملاحظات المتنوعة. متاح باللغة الفرنسية ويشمل نسخة قابلة للطباعة.",
       wilaya: "وهران",
+      category: "ورق مخطط", // Added category
       image: "https://via.placeholder.com/500x300?text=تصميم+ورق+مسطر"
     },
     {
@@ -22,6 +24,7 @@ const fakeData = {
       language: "fr",
       description: "نظام إدارة وثائق متقدم يبسط تنظيم واسترجاع الوثائق. الواجهة متاحة باللغة العربية.",
       wilaya: "قسنطينة",
+      category: "ورق مخطط", // Added category
       image: "https://via.placeholder.com/500x300?text=نظام+إدارة+الوثائق"
     },
     {
@@ -30,6 +33,7 @@ const fakeData = {
       language: "en",
       description: "استكشف العروض الحصرية على هذه البوابة السهلة الاستخدام. تدعم الواجهة الإنجليزية وتقدم مجموعة متنوعة من الصفقات المصممة خصيصًا لاحتياجاتك.",
       wilaya: "بجاية",
+      category: "واجهات مشاريع", // Added category
       image: "https://via.placeholder.com/500x300?text=بوابة+العروض+الحصرية"
     },
     {
@@ -38,6 +42,7 @@ const fakeData = {
       language: "ar",
       description: "أطلق العنان لإبداعك مع هذا التطبيق الذي يعني الكتابة. متاح باللغة الفرنسية، ويوفر بيئة خالية من الانحراف للكتّاب والمؤلفين.",
       wilaya: "تلمسان",
+      category: "واجهات مشاريع", // Added category
       image: "https://via.placeholder.com/500x300?text=تطبيق+الكتابة+الإبداعية"
     },
     {
