@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Card, CardContent, Typography, Box, Link } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Card, CardContent, Typography, Box, Link } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const InterfaceCard = ({ id, title, language }) => {
   const { pathname } = useLocation();
-  const currentLangParam = pathname.split("/")[1];
+  const currentLangParam = pathname.split('/')[1];
 
   return (
     <Link
@@ -16,17 +16,16 @@ const InterfaceCard = ({ id, title, language }) => {
       <Card
         sx={{
           borderRadius: 8,
-          height: "100%",
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-          position: "relative",
-          overflow: "hidden",
-          border: "2px solid #21BF73",
-          transition: "border-color 0.3s, box-shadow 0.3s",
-          "&:hover": {
-            borderColor: "#21BF73",
-            boxShadow: "0 0 10px rgba(33, 191, 115, 0.8)",
-
-            "& .text-block": {
+          height: '100%',
+          boxShadow: 4,
+          position: 'relative',
+          overflow: 'hidden',
+          border: '2px solid #2e7d32',
+          transition: 'border-color 0.3s, box-shadow 0.3s',
+          '&:hover': {
+            borderColor: '#2e7d32',
+            boxShadow: '0 0 10px #2e7d32',
+            '& .text-block': {
               opacity: 1,
             },
           },
@@ -37,13 +36,13 @@ const InterfaceCard = ({ id, title, language }) => {
           alt={title}
           src={`https://via.placeholder.com/200x300?text=${title}`}
           sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
             borderRadius: 8,
-            transition: "transform 0.3s",
-            "&:hover": {
-              transform: "scale(1.1)",
+            transition: 'transform 0.3s',
+            '&:hover': {
+              transform: 'scale(1.1)',
             },
           }}
         />

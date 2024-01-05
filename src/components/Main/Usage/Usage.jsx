@@ -21,30 +21,18 @@ import "./Usage.css";
 
 const Usage = () => {
   const location = useLocation();
-  const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
+  const currentLanguage = location.pathname.split('/')[1]; // Extract language from URL
 
   return (
     <Container
       maxWidth="xl"
-      sx={{
-        backgroundColor: "#B0EACD",
-        padding: "40px 0",
-        textAlign: "center",
-        direction: "rtl",
-      }}
+      sx={{ backgroundColor: '#2e7d32', padding: '40px 0', textAlign: 'center', direction: 'rtl' }}
     >
       <Box
-        sx={{
-          color: "#FD5E53",
-          textAlign: "center",
-          alignItems: "center",
-          display: "flex",
-          flexDirection: "column",
-          gap: 1,
-        }}
+        sx={{ color: '#fff', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column', gap: 1 }}
       >
         <Help />
-        <Typography variant="h5" sx={{ color: "#FD5E53" }}>
+        <Typography variant="h5" sx={{ color: '#fff' }}>
           {translations[currentLanguage].howToUse}
         </Typography>
       </Box>
@@ -76,7 +64,7 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
               <Assignment />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: "center" }}>
+            <Typography variant="h6" sx={{ textAlign: 'center' }}>
               {translations[currentLanguage].discoverVariety}
             </Typography>
           </CardContent>
@@ -103,7 +91,7 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
               <GetApp />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: "center" }}>
+            <Typography variant="h6" sx={{ textAlign: 'center' }}>
               {translations[currentLanguage].downloadFormat}
             </Typography>
           </CardContent>
@@ -130,7 +118,7 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
               <Edit />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: "center" }}>
+            <Typography variant="h6" sx={{ textAlign: 'center' }}>
               {translations[currentLanguage].personalizeEdit}
             </Typography>
           </CardContent>
@@ -148,7 +136,7 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
               <EmojiEvents />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: "center" }}>
+            <Typography variant="h6" sx={{ textAlign: 'center' }}>
               {translations[currentLanguage].achieveSuccess}
             </Typography>
           </CardContent>
