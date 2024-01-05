@@ -1,9 +1,6 @@
 // InterFaces.jsx
-<<<<<<< HEAD
 import  { useState } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> c45883a63bb881b7e8320af864ae27a6a450dfdd
+
 import { useLocation } from "react-router-dom";
 import { Footer, InterfacesContainer, Navbar } from "../../components";
 import InterfaceFilter from "./InterfaceFilter";
