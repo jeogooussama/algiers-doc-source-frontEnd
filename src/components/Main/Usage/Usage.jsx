@@ -69,7 +69,7 @@ const Usage = () => {
             borderRadius: 10,
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
-            backgroundColor: "#F9FCFB",
+            backgroundColor: "#F9FCFB", // Updated color
           }}
         >
           <CardContent>
@@ -96,7 +96,7 @@ const Usage = () => {
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
             mr: { xs: 0, md: 2 },
-            backgroundColor: "#FFC107",
+            backgroundColor: "#FD5E53", // Updated color
           }}
         >
           <CardContent>
@@ -123,7 +123,7 @@ const Usage = () => {
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
             mr: { xs: 0, md: 2 },
-            backgroundColor: "#4CAF50",
+            backgroundColor: "#4CAF50", // Updated color
           }}
         >
           <CardContent>
@@ -141,11 +141,11 @@ const Usage = () => {
             height: 300,
             borderRadius: 10,
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-            backgroundColor: "#2196F3",
+            backgroundColor: "#F9FCFB", // Updated color
           }}
         >
           <CardContent>
-            <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
+            <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
               <EmojiEvents />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: 'center' }}>

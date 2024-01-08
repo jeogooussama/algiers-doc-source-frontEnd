@@ -94,7 +94,7 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/home`}
                   className="Button"
-                  sx={{ color: "#F9FCFB", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Home />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
@@ -107,7 +107,7 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/interfaces`}
                   className="Button"
-                  sx={{ color: "#F9FCFB", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Search />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
@@ -120,7 +120,7 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/about-us`}
                   className="Button"
-                  sx={{ color: "#F9FCFB", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Info />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
@@ -133,7 +133,7 @@ const Navbar = () => {
                   component={Link}
                   to={`/${currentLanguage}/contact-us`}
                   className="Button"
-                  sx={{ color: "#F9FCFB", gap: 1 }}
+                  sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Mail />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>

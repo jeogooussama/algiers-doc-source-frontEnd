@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  TextField,
+  Stack,
+  IconButton,
+  Button,
+} from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 
 const InterfaceFilter = ({ onSelect, onSearch }) => {
@@ -27,13 +36,19 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
 
   return (
     <Stack
-      direction={{ xs: 'column', md: 'row' }}
+      direction={{ xs: "column", md: "row" }}
       mt={{ xs: 3, md: 8 }}
       spacing={2}
       p={3}
-      alignItems={{ xs: 'center', md: 'flex-end' }}
+      alignItems={{ xs: "center", md: "flex-end" }}
+      boxShadow={2}
+      bgcolor="#fff"
+      border="1px solid #e0e0e0"
     >
-      <FormControl variant="outlined" sx={{ minWidth: { xs: '100%', md: '170px' }, height: "100%" }}>
+      <FormControl
+        variant="outlined"
+        sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}
+      >
         <InputLabel id="filter-label">الفلتر</InputLabel>
         <Select
           labelId="filter-label"
@@ -61,7 +76,7 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
         size="small"
         value={searchTerm}
         onChange={handleSearchChange}
-        sx={{ width: { xs: '100%', md: '170px' }, height: "100%" }}
+        sx={{ width: { xs: "100%", md: "170px" }, height: "100%" }}
         InputProps={{
           endAdornment: (
             <IconButton onClick={handleReset} size="small">
@@ -73,7 +88,7 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
       <Button
         variant="outlined"
         onClick={handleReset}
-        sx={{ marginLeft: 1, height: "100%", color: "green" }}
+        sx={{ marginLeft: 1, height: "100%", color: "#2196F3", borderColor: "#2196F3" }}
       >
         إعادة تعيين
       </Button>
