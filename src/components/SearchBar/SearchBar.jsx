@@ -35,7 +35,12 @@ const SearchBar = () => {
       <Container maxWidth="xl" sx={Style.Container}>
         <Box sx={Style.Box}>
           <Autocomplete
-            options={fakeData.interfaces.map((item) => item.title)}
+            options={fakeData.interfaces
+              .filter((item) =>
+                item.title.toLowerCase().includes(searchQuery.toLowerCase())
+              )
+              .slice(0, 5)
+              .map((item) => item.title)}
             freeSolo
             fullWidth
             value={searchQuery}
