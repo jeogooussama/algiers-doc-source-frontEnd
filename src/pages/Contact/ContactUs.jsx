@@ -115,7 +115,7 @@ const ContactUs = () => {
                 component="img"
                 src={pcHome}
                 alt="Home Icon"
-                sx={{ width: "83%", height: "auto", marginTop: 2 }}
+                sx={{ width: "83%", height: "auto", marginTop: 2 ,display:"block"}}
               />
             </Paper>
           </Grid>

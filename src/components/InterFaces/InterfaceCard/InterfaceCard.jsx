@@ -19,6 +19,8 @@ const InterfaceCard = ({ _id, title, language, image }) => {
           borderRadius: 8,
           boxShadow: 4,
           position: "relative",
+          height: "360px", // Changed height to auto for flexibility
+          width: "250px", // Set minimum height to ensure the card is not too small
           overflow: "hidden",
           border: "2px solid #2e7d32",
           transition: "border-color 0.3s, box-shadow 0.3s",
@@ -36,8 +38,9 @@ const InterfaceCard = ({ _id, title, language, image }) => {
           alt={title}
           srcSet={image} // Use the actual image URL from your API response
           sx={{
+            display:"block",
             width: "100%",
-            height: "200px", // Adjust the height as needed
+            height: "auto",
             objectFit: "cover",
             borderRadius: "8px 8px 0 0", // Rounded corners only at the top
             transition: "transform 0.3s",

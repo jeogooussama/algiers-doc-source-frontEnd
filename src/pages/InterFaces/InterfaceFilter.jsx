@@ -10,6 +10,7 @@ import {
   Button,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+
 const InterfaceFilter = ({ onSelect, onSearch }) => {
   const [selectedFilter, setSelectedFilter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,7 +38,8 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
     <Stack
       direction={{ xs: "column", md: "row" }}
       mt={{ xs: 3, md: 10 }}
-      spacing={2} // Adjusted spacing to add space between components      p={3}
+      spacing={2}
+      p={3}
       alignItems={{ xs: "center", md: "flex-end" }}
       boxShadow={2}
       borderRadius={4}
