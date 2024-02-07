@@ -1,15 +1,23 @@
-// InterfaceDetailsPage.jsx
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { InterfaceDetails, Navbar, Footer } from "../../components/";
-import fakeData from "../../fakeData";
+import axios from "axios";
 
 const InterfaceDetailsPage = () => {
   const { id } = useParams();
+  const [interfaceData, setInterfaceData] = useState(null);
 
-  // Find interface data by id
-  const interfaceData = fakeData.interfaces.find(
-    (item) => item.id === Number(id)
-  );
+  useEffect(() => {
+    const fetchInterfaceData = async () => {
+      try {
+        const response = await axios.get(`https://algiridocsapi.onrender.com/interfaces/${id}`);
+        setInterfaceData(response.data);
+      } catch (error) {
+        console.error('Error fetching interface data:', error);
+      }
+    };
+    fetchInterfaceData();
+  }, [id]);
 
   return (
     <div>

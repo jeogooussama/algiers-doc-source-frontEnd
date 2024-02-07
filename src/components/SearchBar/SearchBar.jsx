@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Box,
@@ -7,26 +7,47 @@ import {
   InputAdornment,
   Autocomplete,
   Button,
-} from '@mui/material';
-import { SearchOutlined } from '@mui/icons-material';
-import fakeData from '../../fakeData';
-import Style from './SearchBarStyle'; // Assuming you have a separate file for styles
+} from "@mui/material";
+import { SearchOutlined } from "@mui/icons-material";
+import Style from "./SearchBarStyle"; // Assuming you have a separate file for styles
 
 const SearchBar = () => {
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [interfacesData, setInterfacesData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://algiridocsapi.onrender.com/interfaces`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch interfaces");
+        }
+        const data = await response.json();
+        setInterfacesData(data);
+        setSearchResults(data.map((item) => item.title));
+      } catch (error) {
+        console.error("Error fetching interfaces:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
 
-    const matchedInterface = fakeData.interfaces.find(
-      (item) => item.title === searchQuery
+    const matchedInterface = interfacesData.find(
+      (item) => item.title.toLowerCase() === searchQuery.toLowerCase()
     );
 
     if (matchedInterface) {
+      // Redirect to the first interface found with the matching title
       navigate(`/ar/interfaces/${matchedInterface.id}`);
     } else {
-      console.log('Interface not found');
+      console.log("Interface not found");
     }
   };
 
@@ -35,12 +56,7 @@ const SearchBar = () => {
       <Container maxWidth="xl" sx={Style.Container}>
         <Box sx={Style.Box}>
           <Autocomplete
-            options={fakeData.interfaces
-              .filter((item) =>
-                item.title.toLowerCase().includes(searchQuery.toLowerCase())
-              )
-              .slice(0, 5)
-              .map((item) => item.title)}
+            options={searchResults.slice(0, 5)} // Limit results to 5
             freeSolo
             fullWidth
             value={searchQuery}
@@ -55,14 +71,18 @@ const SearchBar = () => {
                   ...params.InputProps,
                   startAdornment: (
                     <InputAdornment position="start">
-                      <SearchOutlined sx={{ color: '#FD5E53' }} />
+                      <SearchOutlined sx={{ color: "#FD5E53" }} />
                     </InputAdornment>
                   ),
                 }}
               />
             )}
           />
-          <Button type="submit" variant="contained" sx={{ backgroundColor: '#21BF73', color: '#F9FCFB' }}>
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}
+          >
             Search
           </Button>
         </Box>

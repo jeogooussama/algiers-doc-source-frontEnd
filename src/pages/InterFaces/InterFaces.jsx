@@ -1,16 +1,15 @@
 // InterFaces.jsx
-import  { useState } from "react";
-
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Footer, InterfacesContainer, Navbar } from "../../components";
 import InterfaceFilter from "./InterfaceFilter";
-import fakeData from "../../fakeData";
 
 const InterFaces = () => {
   const location = useLocation();
   const currentLangParam = location.pathname.split("/")[1];
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [interfaces, setInterfaces] = useState([]);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
@@ -20,10 +19,26 @@ const InterFaces = () => {
     setSearchTerm(term);
   };
 
-  const interfacesToDisplay = fakeData.interfaces.filter(
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://algiridocsapi.onrender.com/interfaces`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch interfaces");
+        }
+        const data = await response.json();
+        setInterfaces(data);
+      } catch (error) {
+        console.error("Error fetching interfaces:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const interfacesToDisplay = interfaces.filter(
     (item) =>
-      (item.language === currentLangParam || item.language === "ar") &&
-      (selectedCategory === "" || item.category === selectedCategory) &&
+      (item.language === currentLangParam || item.language === "arabic") &&
+      (selectedCategory === "" || item.city === selectedCategory) &&
       (searchTerm === "" || item.title.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
@@ -31,7 +46,7 @@ const InterFaces = () => {
     <div>
       <Navbar />
       <InterfaceFilter onSelect={handleCategorySelect} onSearch={handleSearch} />
-      <InterfacesContainer interfaces={interfacesToDisplay} currentLangParam={currentLangParam} />
+      <InterfacesContainer interfaces={interfacesToDisplay} language={currentLangParam} />
       <Footer />
     </div>
   );

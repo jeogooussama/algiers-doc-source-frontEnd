@@ -10,7 +10,6 @@ import {
   Button,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-
 const InterfaceFilter = ({ onSelect, onSearch }) => {
   const [selectedFilter, setSelectedFilter] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -37,12 +36,12 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      mt={{ xs: 3, md: 8 }}
-      spacing={2}
-      p={3}
+      mt={{ xs: 3, md: 10 }}
+      spacing={2} // Adjusted spacing to add space between components      p={3}
       alignItems={{ xs: "center", md: "flex-end" }}
       boxShadow={2}
-      bgcolor="#fff"
+      borderRadius={4}
+      bgcolor="#f9f9f9"
       border="1px solid #e0e0e0"
     >
       <FormControl
@@ -56,12 +55,21 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
           label="الفلتر"
           value={selectedFilter}
           onChange={handleFilterChange}
-          sx={{ height: "100%" }}
+          sx={{
+            height: "100%",
+            "& .MuiSelect-outlined": {
+              borderRadius: 8,
+              bgcolor: "#fff",
+            },
+          }}
         >
           <MenuItem value="" sx={{ color: "black", height: "100%" }}>
             الكل
           </MenuItem>
-          <MenuItem value="واجهات مشاريع" sx={{ color: "black", height: "100%" }}>
+          <MenuItem
+            value="واجهات مشاريع"
+            sx={{ color: "black", height: "100%" }}
+          >
             واجهات مشاريع
           </MenuItem>
           <MenuItem value="ورق مخطط" sx={{ color: "black", height: "100%" }}>
@@ -76,7 +84,14 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
         size="small"
         value={searchTerm}
         onChange={handleSearchChange}
-        sx={{ width: { xs: "100%", md: "170px" }, height: "100%" }}
+        sx={{
+          width: { xs: "100%", md: "170px" },
+          height: "100%",
+          "& .MuiOutlinedInput-root": {
+            borderRadius: 8,
+            bgcolor: "#fff",
+          },
+        }}
         InputProps={{
           endAdornment: (
             <IconButton onClick={handleReset} size="small">
@@ -86,9 +101,17 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
         }}
       />
       <Button
-        variant="outlined"
+        variant="contained"
         onClick={handleReset}
-        sx={{ marginLeft: 1, height: "100%", color: "#2196F3", borderColor: "#2196F3" }}
+        sx={{
+          marginLeft: 1,
+          height: "100%",
+          color: "#fff",
+          bgcolor: "#2196F3",
+          "&:hover": {
+            bgcolor: "#1565c0",
+          },
+        }}
       >
         إعادة تعيين
       </Button>

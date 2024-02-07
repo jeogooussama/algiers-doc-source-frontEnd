@@ -1,8 +1,12 @@
-/* eslint-disable react/prop-types */
-import { Container, Typography, Paper, Box, Grid } from "@mui/material";
-import DownloadButton from "./DownloadButton";
+import { Container, Typography, Paper, Box, Grid, Button } from "@mui/material";
 
-const InterfaceDetails = ({ title, description, language }) => {
+const InterfaceDetails = ({
+  title,
+  description,
+  language,
+  downloadLinks,
+  image,
+}) => {
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
       <Paper
@@ -15,32 +19,55 @@ const InterfaceDetails = ({ title, description, language }) => {
         }}
       >
         <Grid container spacing={4}>
-          {/* Image Preview Placeholder on the left */}
           <Grid item xs={12} md={4}>
             <img
-              src={`https://via.placeholder.com/300x400?text=${title}`}
+              src={image}
               alt={title}
-              style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)" }}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: 16,
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+              }}
             />
           </Grid>
-
-          {/* Title, Language, and Description on the right */}
-          <Grid item xs={12} md={8} sx={{ display: "flex", flexDirection: "column" }}>
+          <Grid
+            item
+            xs={12}
+            md={8}
+            sx={{ display: "flex", flexDirection: "column" }}
+          >
             <Typography variant="h4" sx={{ marginBottom: 2, color: "#21BF73" }}>
               {title}
             </Typography>
-
-            <Typography variant="subtitle1" sx={{ marginBottom: 2, color: "#21BF73" }}>
-              Language: {language}
+            <Typography
+              variant="subtitle1"
+              sx={{ marginBottom: 2, color: "#21BF73" }}
+            >
+              اللغة: {language}
             </Typography>
-
             <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
               {description}
             </Typography>
-
-            {/* DownloadButton at the bottom right */}
             <Box mt="auto" sx={{ textAlign: "right" }}>
-              <DownloadButton fileName={title} color="success" size="large" />
+              <a
+                href={downloadLinks.word}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="contained" color="primary">
+                  تحميل word
+                </Button>
+              </a>
+              <a
+                href={downloadLinks.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="contained" color="error">
+                  تحميل PDF
+                </Button>
+              </a>
             </Box>
           </Grid>
         </Grid>
