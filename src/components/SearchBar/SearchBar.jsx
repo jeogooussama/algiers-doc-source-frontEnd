@@ -21,7 +21,7 @@ const SearchBar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://algiridocsapi.onrender.com/interfaces`
+          `https://algeridoc.adaptable.app/interfaces`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch interfaces");
