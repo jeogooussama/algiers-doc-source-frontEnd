@@ -1,24 +1,22 @@
-import { useState } from "react";
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  TextField,
-  Stack,
-  IconButton,
-  Button,
-} from "@mui/material";
+import  { useState } from "react";
+import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 
-const InterfaceFilter = ({ onSelect, onSearch }) => {
+const InterfaceFilter = ({ onSelect, onSearch, onLanguageSelect }) => {
   const [selectedFilter, setSelectedFilter] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleFilterChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedFilter(selectedValue);
     onSelect(selectedValue);
+  };
+
+  const handleLanguageChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedLanguage(selectedValue);
+    onLanguageSelect(selectedValue); // Call onLanguageSelect with selected language
   };
 
   const handleSearchChange = (event) => {
@@ -29,6 +27,7 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
 
   const handleReset = () => {
     setSelectedFilter("");
+    setSelectedLanguage("");
     setSearchTerm("");
     onSelect("");
     onSearch("");
@@ -68,14 +67,44 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
           <MenuItem value="" sx={{ color: "black", height: "100%" }}>
             الكل
           </MenuItem>
-          <MenuItem
-            value="واجهات مشاريع"
-            sx={{ color: "black", height: "100%" }}
-          >
-            واجهات مشاريع
+          <MenuItem value="interface" sx={{ color: "black", height: "100%" }}>
+            واجهة
           </MenuItem>
-          <MenuItem value="ورق مخطط" sx={{ color: "black", height: "100%" }}>
+          <MenuItem value="lined_paper" sx={{ color: "black", height: "100%" }}>
             ورق مخطط
+          </MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl
+        variant="outlined"
+        sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}
+      >
+        <InputLabel id="language-label">اللغة</InputLabel>
+        <Select
+          labelId="language-label"
+          id="language"
+          label="اللغة"
+          value={selectedLanguage}
+          onChange={handleLanguageChange}
+          sx={{
+            height: "100%",
+            "& .MuiSelect-outlined": {
+              borderRadius: 8,
+              bgcolor: "#fff",
+            },
+          }}
+        >
+          <MenuItem value="" sx={{ color: "black", height: "100%" }}>
+            الكل
+          </MenuItem>
+          <MenuItem value="arabic" sx={{ color: "black", height: "100%" }}>
+            عربي
+          </MenuItem>
+          <MenuItem value="english" sx={{ color: "black", height: "100%" }}>
+            إنجليزي
+          </MenuItem>
+          <MenuItem value="french" sx={{ color: "black", height: "100%" }}>
+            فرنسي
           </MenuItem>
         </Select>
       </FormControl>
@@ -106,7 +135,7 @@ const InterfaceFilter = ({ onSelect, onSearch }) => {
         variant="contained"
         onClick={handleReset}
         sx={{
-          marginLeft: 1,
+          marginLeft: { xs: 0, md: 1 }, // Adjusted margin for better spacing
           height: "100%",
           color: "#fff",
           bgcolor: "#2196F3",

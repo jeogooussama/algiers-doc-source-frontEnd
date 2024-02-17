@@ -14,7 +14,7 @@ const InterfaceCard = ({ _id, title, language, image }) => {
       to={`/${currentLangParam}/interfaces/${_id}`}
       underline="none"
     >
-      <Card
+       <Card
         sx={{
           borderRadius: 8,
           boxShadow: 4,
@@ -30,6 +30,12 @@ const InterfaceCard = ({ _id, title, language, image }) => {
             "& .text-block": {
               opacity: 1,
             },
+          },
+          "@media (max-width: 600px)": {
+            // On small screens, make the card smaller
+            width: "190px", // You can adjust this value as needed
+            height: "240px",
+            p:1 // Let the height adjust automatically
           },
         }}
       >
