@@ -45,7 +45,7 @@ const SearchBar = () => {
 
     if (matchedInterface) {
       // Redirect to the first interface found with the matching title
-      navigate(`/ar/interfaces/${matchedInterface._id}`);
+      navigate(`/interfaces/${matchedInterface._id}`);
     } else {
       console.log("Interface not found");
     }
