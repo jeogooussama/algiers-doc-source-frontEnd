@@ -85,7 +85,7 @@ const HeroArea = () => {
                     },
                   }}
                 >
-                  <Link to={"/ar/interfaces"} style={{ textDecoration: 'none' }}>
+                  <Link to={"/interfaces"} style={{ textDecoration: 'none' }}>
                     <Typography variant="button" color="white">
                       استكشاف التنزيلات مجانًا
                     </Typography>
@@ -104,7 +104,7 @@ const HeroArea = () => {
                     },
                   }}
                 >
-                  <Link to={"/ar/about-us"} style={{ textDecoration: 'none' }}>
+                  <Link to={"/about-us"} style={{ textDecoration: 'none' }}>
                     <Typography variant="button" color="#f44336">
                       من نحن ؟
                     </Typography>
