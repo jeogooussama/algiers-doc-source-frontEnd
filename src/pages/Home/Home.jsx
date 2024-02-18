@@ -5,8 +5,8 @@ const Home = () => {
     <div>
       <Navbar />
       <HeroArea />
-      <SearchBar />
       <Usage />
+      <SearchBar />
       <Footer />
     </div>
   );
