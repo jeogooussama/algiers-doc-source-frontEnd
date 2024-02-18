@@ -47,7 +47,7 @@ const Navbar = () => {
                 <ListItem
                   button
                   component={Link}
-                  to={`/home`}
+                  to={`/`}
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
