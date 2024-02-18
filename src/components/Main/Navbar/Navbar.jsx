@@ -92,7 +92,7 @@ const Navbar = () => {
               <Grid item gap={1}>
                 <IconButton
                   component={Link}
-                  to={`/home`}
+                  to={`/`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
