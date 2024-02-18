@@ -5,9 +5,9 @@ const Home = () => {
     <div>
       <Navbar />
       <HeroArea />
-      <Usage/>
-      <SearchBar/>
-      <Footer/>
+      <SearchBar />
+      <Usage />
+      <Footer />
     </div>
   );
 };
