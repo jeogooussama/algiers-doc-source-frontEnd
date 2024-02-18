@@ -11,22 +11,22 @@ import {
   ListItemText,
   Grid,
 } from "@mui/material/";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Home, Search, Info, Mail, Menu, Close } from "@mui/icons-material";
-import translations from "./NavbarTranslations"; // Import translations
 import "./NavBar.css";
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const location = useLocation();
-  const currentLanguage = location.pathname.split("/")[1]; // Extract language from URL
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}>
+    <AppBar
+      position="fixed"
+      sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}
+    >
       <Toolbar>
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item sx={{ display: { xs: "block", md: "none" } }}>
@@ -38,7 +38,7 @@ const Navbar = () => {
             </IconButton>
           </Grid>
           <Grid item sx={{ display: { xs: "block", md: "block" } }}>
-            <Typography variant="h6">{translations[currentLanguage].appTitle}</Typography>
+            <Typography variant="h6">AlgeriDocs</Typography>
           </Grid>
           <Grid item sx={{ display: { xs: "block", md: "none" } }}>
             <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
@@ -47,42 +47,42 @@ const Navbar = () => {
                 <ListItem
                   button
                   component={Link}
-                  to={`/${currentLanguage}/home`}
+                  to={`/home`}
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
                   <Home sx={{ color: "#FD5E53" }} />
-                  <ListItemText primary={translations[currentLanguage].home} />
+                  الرئيسية{" "}
                 </ListItem>
                 <ListItem
                   button
                   component={Link}
-                  to={`/${currentLanguage}/interfaces`}
+                  to={`/interfaces`}
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
                   <Search sx={{ color: "#FD5E53" }} />
-                  <ListItemText primary={translations[currentLanguage].interfaces} />
+                  <ListItemText primary={"واجهات"} />
                 </ListItem>
                 <ListItem
                   button
                   component={Link}
-                  to={`/${currentLanguage}/about-us`}
+                  to={`/about-us`}
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
                   <Info sx={{ color: "#FD5E53" }} />
-                  <ListItemText primary={translations[currentLanguage].aboutUs} />
+                  <ListItemText primary={"معلومات عنا"} />
                 </ListItem>
                 <ListItem
                   button
                   component={Link}
-                  to={`/${currentLanguage}/contact-us`}
+                  to={`/contact-us`}
                   onClick={toggleDrawer}
                   sx={{ gap: 1 }}
                 >
                   <Mail sx={{ color: "#FD5E53" }} />
-                  <ListItemText primary={translations[currentLanguage].contactUs} />
+                  <ListItemText primary={"اتصل بنا"} />
                 </ListItem>
               </List>
             </Drawer>
@@ -92,52 +92,52 @@ const Navbar = () => {
               <Grid item gap={1}>
                 <IconButton
                   component={Link}
-                  to={`/${currentLanguage}/home`}
+                  to={`/home`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Home />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
-                    {translations[currentLanguage].home}
+                    الرئيسية
                   </Typography>
                 </IconButton>
               </Grid>
               <Grid item>
                 <IconButton
                   component={Link}
-                  to={`/${currentLanguage}/interfaces`}
+                  to={`/interfaces`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Search />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
-                    {translations[currentLanguage].interfaces}
+                    واجهات{" "}
                   </Typography>
                 </IconButton>
               </Grid>
               <Grid item>
                 <IconButton
                   component={Link}
-                  to={`/${currentLanguage}/about-us`}
+                  to={`/about-us`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Info />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
-                    {translations[currentLanguage].aboutUs}
+                    معلومات عنا{" "}
                   </Typography>
                 </IconButton>
               </Grid>
               <Grid item>
                 <IconButton
                   component={Link}
-                  to={`/${currentLanguage}/contact-us`}
+                  to={`/contact-us`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1, fontSize: "1.2rem" }}
                 >
                   <Mail />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
-                    {translations[currentLanguage].contactUs}
+                    اتصل بنا{" "}
                   </Typography>
                 </IconButton>
               </Grid>

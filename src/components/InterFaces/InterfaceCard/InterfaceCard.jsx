@@ -2,19 +2,11 @@
 /* eslint-disable react/prop-types */
 import { Card, CardContent, Typography, Box, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
 const InterfaceCard = ({ _id, title, language, image }) => {
-  const { pathname } = useLocation();
-  const currentLangParam = pathname.split("/")[1];
-
   return (
-    <Link
-      component={RouterLink}
-      to={`/${currentLangParam}/interfaces/${_id}`}
-      underline="none"
-    >
-       <Card
+    <Link component={RouterLink} to={`/interfaces/${_id}`} underline="none">
+      <Card
         sx={{
           borderRadius: 8,
           boxShadow: 4,
@@ -35,7 +27,7 @@ const InterfaceCard = ({ _id, title, language, image }) => {
             // On small screens, make the card smaller
             width: "190px", // You can adjust this value as needed
             height: "240px",
-            p:1 // Let the height adjust automatically
+            p: 1, // Let the height adjust automatically
           },
         }}
       >
@@ -44,7 +36,7 @@ const InterfaceCard = ({ _id, title, language, image }) => {
           alt={title}
           srcSet={image} // Use the actual image URL from your API response
           sx={{
-            display:"block",
+            display: "block",
             width: "100%",
             height: "auto",
             objectFit: "cover",

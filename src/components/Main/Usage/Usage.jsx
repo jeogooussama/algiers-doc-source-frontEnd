@@ -15,14 +15,9 @@ import {
 } from "@mui/icons-material";
 import ArrowUp from "../../../assets/arrowUp.png";
 import ArrowDown from "../../../assets/arrowDown.png";
-import { useLocation } from "react-router-dom";
-import translations from "./UsageTranslations"; // Import translations
 import "./Usage.css";
 
 const Usage = () => {
-  const location = useLocation();
-  const currentLanguage = location.pathname.split('/')[1]; // Extract language from URL
-
   return (
     <Container
       maxWidth="xl"
@@ -45,7 +40,7 @@ const Usage = () => {
       >
         <Help />
         <Typography variant="h5" sx={{ color: "#FD5E53" }}>
-          {translations[currentLanguage].howToUse}
+          كيفية الاستخدام
         </Typography>
       </Box>
       <Box
@@ -76,8 +71,8 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
               <Assignment />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
-              {translations[currentLanguage].discoverVariety}
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              اكتشف مجموعة متنوعة من الواجهات{" "}
             </Typography>
           </CardContent>
         </Card>
@@ -103,8 +98,8 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
               <GetApp />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
-              {translations[currentLanguage].downloadFormat}
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              تحميل بتنسيق Word أو PDF{" "}
             </Typography>
           </CardContent>
         </Card>
@@ -130,8 +125,8 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
               <Edit />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
-              {translations[currentLanguage].personalizeEdit}
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              تخصيص وتحرير مستنداتك
             </Typography>
           </CardContent>
         </Card>
@@ -148,8 +143,8 @@ const Usage = () => {
             <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
               <EmojiEvents />
             </IconButton>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
-              {translations[currentLanguage].achieveSuccess}
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              تحقيق النجاح في دراستك{" "}
             </Typography>
           </CardContent>
         </Card>
