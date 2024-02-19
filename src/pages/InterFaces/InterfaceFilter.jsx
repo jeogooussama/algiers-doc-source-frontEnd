@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { FormControl, InputLabel, Select, MenuItem, TextField, Stack, IconButton, Button } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 
@@ -16,7 +16,7 @@ const InterfaceFilter = ({ onSelect, onSearch, onLanguageSelect }) => {
   const handleLanguageChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedLanguage(selectedValue);
-    onLanguageSelect(selectedValue); // Call onLanguageSelect with selected language
+    onLanguageSelect(selectedValue);
   };
 
   const handleSearchChange = (event) => {
@@ -45,67 +45,35 @@ const InterfaceFilter = ({ onSelect, onSearch, onLanguageSelect }) => {
       bgcolor="#f9f9f9"
       border="1px solid #e0e0e0"
     >
-      <FormControl
-        variant="outlined"
-        sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}
-      >
-        <InputLabel id="filter-label">الفلتر</InputLabel>
+      <FormControl variant="outlined" sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}>
+        <InputLabel htmlFor="filter-select" sx={{ color: "#666", fontWeight: 600 }}>الفلتر</InputLabel>
         <Select
-          labelId="filter-label"
+          labelId="filter-select"
           id="filter"
-          label="الفلتر"
           value={selectedFilter}
           onChange={handleFilterChange}
-          sx={{
-            height: "100%",
-            "& .MuiSelect-outlined": {
-              borderRadius: 8,
-              bgcolor: "#fff",
-            },
-          }}
+          label="الفلتر"
+          sx={{ height: "100%" }}
         >
-          <MenuItem value="" sx={{ color: "black", height: "100%" }}>
-            الكل
-          </MenuItem>
-          <MenuItem value="interface" sx={{ color: "black", height: "100%" }}>
-            واجهة
-          </MenuItem>
-          <MenuItem value="lined_paper" sx={{ color: "black", height: "100%" }}>
-            ورق مخطط
-          </MenuItem>
+          <MenuItem value="">الكل</MenuItem>
+          <MenuItem value="interface">واجهة</MenuItem>
+          <MenuItem value="lined_paper">ورق مخطط</MenuItem>
         </Select>
       </FormControl>
-      <FormControl
-        variant="outlined"
-        sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}
-      >
-        <InputLabel id="language-label">اللغة</InputLabel>
+      <FormControl variant="outlined" sx={{ minWidth: { xs: "100%", md: "170px" }, height: "100%" }}>
+        <InputLabel htmlFor="language-select" sx={{ color: "#666", fontWeight: 600 }}>اللغة</InputLabel>
         <Select
-          labelId="language-label"
+          labelId="language-select"
           id="language"
-          label="اللغة"
           value={selectedLanguage}
           onChange={handleLanguageChange}
-          sx={{
-            height: "100%",
-            "& .MuiSelect-outlined": {
-              borderRadius: 8,
-              bgcolor: "#fff",
-            },
-          }}
+          label="اللغة"
+          sx={{ height: "100%" }}
         >
-          <MenuItem value="" sx={{ color: "black", height: "100%" }}>
-            الكل
-          </MenuItem>
-          <MenuItem value="arabic" sx={{ color: "black", height: "100%" }}>
-            عربي
-          </MenuItem>
-          <MenuItem value="english" sx={{ color: "black", height: "100%" }}>
-            إنجليزي
-          </MenuItem>
-          <MenuItem value="french" sx={{ color: "black", height: "100%" }}>
-            فرنسي
-          </MenuItem>
+          <MenuItem value="">الكل</MenuItem>
+          <MenuItem value="arabic">عربي</MenuItem>
+          <MenuItem value="english">إنجليزي</MenuItem>
+          <MenuItem value="french">فرنسي</MenuItem>
         </Select>
       </FormControl>
       <TextField
@@ -115,13 +83,10 @@ const InterfaceFilter = ({ onSelect, onSearch, onLanguageSelect }) => {
         size="small"
         value={searchTerm}
         onChange={handleSearchChange}
-        sx={{
-          width: { xs: "100%", md: "170px" },
-          height: "100%",
-          "& .MuiOutlinedInput-root": {
-            borderRadius: 8,
-            bgcolor: "#fff",
-          },
+        sx={{ width: { xs: "100%", md: "170px" }, height: "100%" }}
+        InputLabelProps={{
+          shrink: true,
+          style: { color: "#666", fontWeight: 600 }
         }}
         InputProps={{
           endAdornment: (
@@ -135,12 +100,12 @@ const InterfaceFilter = ({ onSelect, onSearch, onLanguageSelect }) => {
         variant="contained"
         onClick={handleReset}
         sx={{
-          marginLeft: { xs: 0, md: 1 }, // Adjusted margin for better spacing
+          marginLeft: { xs: 0, md: 1 },
           height: "100%",
           color: "#fff",
-          bgcolor: "#2196F3",
+          bgcolor: "#21BF73",
           "&:hover": {
-            bgcolor: "#1565c0",
+            bgcolor: "#21BF73",
           },
         }}
       >

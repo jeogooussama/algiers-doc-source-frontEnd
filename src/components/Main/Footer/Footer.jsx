@@ -1,12 +1,6 @@
-// Footer.jsx
 import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
-import {
-  Email,
-  Phone,
-  Facebook,
-  LinkedIn,
-  Instagram,
-} from "@mui/icons-material";
+import { Email, Phone, Facebook, Instagram, GitHub } from "@mui/icons-material";
+import logo from "../../../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -14,75 +8,58 @@ const Footer = () => {
       sx={{
         bgcolor: "#21BF73",
         color: "#F9FCFB",
-        padding: "40px 0",
         textAlign: "center",
+        paddingTop: 3,
+        paddingBottom: 3,
       }}
     >
-      <Grid container justifyContent="center" display={"felx"} spacing={3}>
-        {/* Contact Information */}
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6">اتصل بي</Typography>
-          {/* Email */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 2,
-              mt: 2,
-            }}
-          >
-            <IconButton href="mailto:jeogodz@protonmail.com" color="inherit">
-              <Email />
-            </IconButton>
-            <Typography variant="body1">jeogodz@protonmail.com</Typography>
-          </Box>
-          {/* Phone */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 2,
-              mt: 1,
-            }}
-          >
-            <IconButton href="tel:+1234567890" color="inherit">
-              <Phone />
-            </IconButton>
-            <Typography variant="body1">+123 456 7890</Typography>
-          </Box>
-        </Grid>
-
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginBottom: 3,
+        }}
+      >
+        <img alt="" srcSet={logo} style={{ display: "block" }} height={"60px"} />
+        <Typography variant="h6">AlgeriDocs</Typography>
+      </Box>
+      
+      <Grid container justifyContent="center" spacing={3}>
         {/* Social Media Links */}
         <Grid item xs={12} md={4}>
-          <Typography variant="h6"> وسائل التواصل الاجتماعي</Typography>
-          <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+          <Typography variant="h6" sx={{ marginBottom: 2 }}>
+            وسائل التواصل الاجتماعي
+          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Link
-              href="https://www.facebook.com/yourfacebook"
+              href="https://web.facebook.com/profile.php?id=100084991429677"
               color="inherit"
-              sx={{ mx: 2, textDecoration: "none", fontWeight: "bold" }}
+              sx={{ mx: 1, textDecoration: "none" }}
+              target="_blank"  // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
                 <Facebook />
               </IconButton>
             </Link>
             <Link
-              href="https://twitter.com/yourtwitter"
+              href="https://www.instagram.com/oussama.pg/"
               color="inherit"
-              sx={{ mx: 2, textDecoration: "none", fontWeight: "bold" }}
+              sx={{ mx: 1, textDecoration: "none" }}
+              target="_blank"  // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
                 <Instagram />
               </IconButton>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/yourlinkedin"
+              href="https://github.com/username"
               color="inherit"
-              sx={{ mx: 2, textDecoration: "none", fontWeight: "bold" }}
+              sx={{ mx: 1, textDecoration: "none" }}
+              target="_blank"  // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
-                <LinkedIn />
+                <GitHub />
               </IconButton>
             </Link>
           </Box>
@@ -90,10 +67,11 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <Grid item xs={12} md={4}>
-          <Typography variant="h6">روابط سريعة</Typography>
+          <Typography variant="h6" sx={{ marginBottom: 2 }}>
+            روابط سريعة
+          </Typography>
           <Box
             sx={{
-              mt: 2,
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -102,14 +80,14 @@ const Footer = () => {
             <Link
               href={`/about-us`}
               color="inherit"
-              sx={{ my: 1, textDecoration: "none", fontWeight: "bold" }}
+              sx={{ my: 1, textDecoration: "none" }}
             >
               عني{" "}
             </Link>
             <Link
               href={`/contact-us`}
               color="inherit"
-              sx={{ my: 1, textDecoration: "none", fontWeight: "bold" }}
+              sx={{ my: 1, textDecoration: "none" }}
             >
               اتصال{" "}
             </Link>
@@ -118,9 +96,9 @@ const Footer = () => {
       </Grid>
 
       {/* Copyright */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="body2" textAlign="center">
-          &copy; {new Date().getFullYear()} jeogo كل الحقوق محفوظة.{" "}
+      <Box sx={{ marginTop: 3 }}>
+        <Typography variant="body2">
+          &copy; {new Date().getFullYear()} jeogo كل الحقوق محفوظة.
         </Typography>
       </Box>
     </Box>

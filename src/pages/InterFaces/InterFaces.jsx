@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { CircularProgress, Container } from "@mui/material";
 import { Footer, InterfacesContainer, Navbar } from "../../components";
 import InterfaceFilter from "./InterfaceFilter";
@@ -8,11 +8,12 @@ const InterFaces = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [interfaces, setInterfaces] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleCategorySelect = (category) => {
-    const newCategory = selectedCategory === category ? "" : category;
-    setSelectedCategory(newCategory === "واجهة" ? "interface" : newCategory === "ورق مخطط" ? "lined_paper" : newCategory);
+    setSelectedCategory((prevCategory) =>
+      prevCategory === category ? "" : category === "واجهة" ? "interface" : category === "ورق مخطط" ? "lined_paper" : category
+    );
   };
 
   const handleLanguageSelect = (language) => {
@@ -35,13 +36,13 @@ const InterFaces = () => {
       } catch (error) {
         console.error("Error fetching interfaces:", error);
       } finally {
-        setIsLoading(false); 
+        setIsLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  const interfacesToDisplay = interfaces.filter(
+  const filteredInterfaces = interfaces.filter(
     (item) =>
       (selectedCategory === "" || item.type === selectedCategory) &&
       (selectedLanguage === "" || item.language === selectedLanguage) &&
@@ -49,26 +50,18 @@ const InterFaces = () => {
   );
 
   return (
-    <div>
+    <>
       <Navbar />
       <InterfaceFilter onSelect={handleCategorySelect} onSearch={handleSearch} onLanguageSelect={handleLanguageSelect} />
-      <Container
-        maxWidth="xl"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "60vh",
-        }}
-      >
+      <Container maxWidth="xl" sx={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "60vh" }}>
         {isLoading ? (
           <CircularProgress />
         ) : (
-          <InterfacesContainer interfaces={interfacesToDisplay} />
+          <InterfacesContainer interfaces={filteredInterfaces} />
         )}
       </Container>
       <Footer />
-    </div>
+    </>
   );
 };
 

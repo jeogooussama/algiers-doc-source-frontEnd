@@ -1,8 +1,9 @@
 // InterfaceCard.jsx
 /* eslint-disable react/prop-types */
+// InterfaceCard.jsx
 import { Card, CardContent, Typography, Box, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-
+import "./InterfaceCard.css"
 const InterfaceCard = ({ _id, title, language, image }) => {
   return (
     <Link component={RouterLink} to={`/interfaces/${_id}`} underline="none">
@@ -19,15 +20,14 @@ const InterfaceCard = ({ _id, title, language, image }) => {
           "&:hover": {
             borderColor: "#2e7d32",
             boxShadow: "0 0 10px #2e7d32",
-            "& .text-block": {
-              opacity: 1,
+            "& .card-content": {
+              transform: "translateY(0%)", // Show card content on hover
             },
           },
           "@media (max-width: 600px)": {
             // On small screens, make the card smaller
-            width: "190px", // You can adjust this value as needed
-            height: "240px",
-            p: 1, // Let the height adjust automatically
+            width: "220px", // Adjusted width to show two cards in a row with margin
+            height: "270px",
           },
         }}
       >
@@ -48,7 +48,8 @@ const InterfaceCard = ({ _id, title, language, image }) => {
           }}
         />
         <CardContent
-          sx={{ padding: "12px" }} // Add padding to the content
+          className="card-content" // Added class for targeting
+          sx={{ padding: "12px", transform: "translateY(100%)" }} // Initially hide card content
         >
           <Typography variant="h6" color="#21BF73">
             {title}
