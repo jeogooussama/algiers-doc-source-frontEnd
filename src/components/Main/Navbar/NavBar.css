@@ -1,7 +1,7 @@
 .Button {
     color: white;
     border-color: white;
-    background-color: white;
+    border-radius: none;
 }
 
 .Button:hover {
