@@ -1,5 +1,5 @@
 import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
-import { Email, Phone, Facebook, Instagram, GitHub } from "@mui/icons-material";
+import { Facebook, Instagram, GitHub } from "@mui/icons-material";
 import logo from "../../../assets/logo.png";
 
 const Footer = () => {
@@ -21,10 +21,15 @@ const Footer = () => {
           marginBottom: 3,
         }}
       >
-        <img alt="" srcSet={logo} style={{ display: "block" }} height={"60px"} />
+        <img
+          alt=""
+          srcSet={logo}
+          style={{ display: "block" }}
+          height={"60px"}
+        />
         <Typography variant="h6">AlgeriDocs</Typography>
       </Box>
-      
+
       <Grid container justifyContent="center" spacing={3}>
         {/* Social Media Links */}
         <Grid item xs={12} md={4}>
@@ -36,7 +41,7 @@ const Footer = () => {
               href="https://web.facebook.com/profile.php?id=100084991429677"
               color="inherit"
               sx={{ mx: 1, textDecoration: "none" }}
-              target="_blank"  // Add target="_blank" to open in a new tab
+              target="_blank" // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
                 <Facebook />
@@ -46,17 +51,17 @@ const Footer = () => {
               href="https://www.instagram.com/oussama.pg/"
               color="inherit"
               sx={{ mx: 1, textDecoration: "none" }}
-              target="_blank"  // Add target="_blank" to open in a new tab
+              target="_blank" // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
                 <Instagram />
               </IconButton>
             </Link>
             <Link
-              href="https://github.com/username"
+              href="https://github.com/jeogooussama"
               color="inherit"
               sx={{ mx: 1, textDecoration: "none" }}
-              target="_blank"  // Add target="_blank" to open in a new tab
+              target="_blank" // Add target="_blank" to open in a new tab
             >
               <IconButton sx={{ "&:hover, &:active": { color: "#FD5E53" } }}>
                 <GitHub />
