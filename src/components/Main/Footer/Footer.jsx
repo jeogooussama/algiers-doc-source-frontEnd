@@ -1,6 +1,7 @@
 import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
 import { Facebook, Instagram, GitHub } from "@mui/icons-material";
 import logo from "../../../assets/logo.png";
+import freePalsetine from "../../../../assets/freePalsetine.png";
 
 const Footer = () => {
   return (
@@ -13,6 +14,7 @@ const Footer = () => {
         paddingBottom: 3,
       }}
     >
+      {/* AlgeriDocs Logo */}
       <Box
         sx={{
           display: "flex",
@@ -21,12 +23,7 @@ const Footer = () => {
           marginBottom: 3,
         }}
       >
-        <img
-          alt=""
-          srcSet={logo}
-          style={{ display: "block" }}
-          height={"60px"}
-        />
+        <img alt="" src={logo} style={{ display: "block" }} height={"60px"} />
         <Typography variant="h6">AlgeriDocs</Typography>
       </Box>
 
@@ -99,6 +96,13 @@ const Footer = () => {
           </Box>
         </Grid>
       </Grid>
+
+      {/* Free Palestine Image */}
+      <img
+        src={freePalsetine}
+        alt="Free Palestine"
+        style={{ height: 50, marginTop: 10, width: 60, display: "block" }}
+      />
 
       {/* Copyright */}
       <Box sx={{ marginTop: 3 }}>

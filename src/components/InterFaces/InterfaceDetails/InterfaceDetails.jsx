@@ -7,7 +7,7 @@ const InterfaceDetails = ({ title, description, language, downloadLinks, image }
         elevation={3}
         sx={{
           padding: { xs: "2rem", md: "3rem" },
-          background: "#F9FCFB",
+          backgroundColor: "#F9FCFB", // Set background color
           borderRadius: 16,
           boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
         }}
@@ -17,28 +17,28 @@ const InterfaceDetails = ({ title, description, language, downloadLinks, image }
             <img
               src={image}
               alt={title}
-              style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",display:"block" }}
+              style={{ width: "100%", height: "auto", borderRadius: 16, boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", display:"block" }}
             />
           </Grid>
           <Grid item xs={12} md={8} sx={{ display: "flex", flexDirection: "column" }}>
             <Typography variant="h4" sx={{ marginBottom: 2, color: "#21BF73" }}>
               {title}
             </Typography>
-            <Typography variant="subtitle1" sx={{ marginBottom: 2, color: "#21BF73" }}>
-              اللغة: {language}
+            <Typography variant="subtitle1" sx={{ marginBottom: 2, color: "#FD5E53" }}>
+              Language: {language}
             </Typography>
             <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
               {description}
             </Typography>
             <Box mt="auto" sx={{ textAlign: "right" }}>
-              <a href={downloadLinks.word} target="_blank" rel="noopener noreferrer">
-                <Button variant="contained" color="primary">
-                  تحميل word
+              <a href={downloadLinks.word} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                <Button variant="contained" color="primary" sx={{ mr: 1 }}>
+                  Download Word
                 </Button>
               </a>
-              <a href={downloadLinks.pdf} target="_blank" rel="noopener noreferrer">
+              <a href={downloadLinks.pdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
                 <Button variant="contained" color="error">
-                  تحميل PDF
+                  Download PDF
                 </Button>
               </a>
             </Box>

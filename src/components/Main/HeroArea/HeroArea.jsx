@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid } from "@mui/material";
+import { Box, Container, Typography, Grid, Button } from "@mui/material";
 import photocopy from "../../../assets/organizing.svg";
 import { Link } from "react-router-dom";
 
@@ -6,26 +6,22 @@ const imageUrl = photocopy; // Replace with your actual image URL
 
 const HeroArea = () => {
   return (
-    <div
+    <Box
       className="heroArea"
-      style={{
+      sx={{
         marginTop: "64px",
         padding: "20px",
+        backgroundColor: "#F9FCFB", // Changed background color
       }}
     >
       <Container maxWidth="xl">
-        <Grid
-          container
-          spacing={3}
-          className="container-items"
-          textAlign="right"
-        >
+        <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box
               component="div"
               className="ImageContainer"
               sx={{
-                background: `url('${imageUrl}')`,
+                backgroundImage: `url('${imageUrl}')`, // Changed background image property
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: { xs: "200px", md: "400px" },
@@ -37,7 +33,9 @@ const HeroArea = () => {
             <Box
               sx={{
                 borderRadius: "10px",
-                padding: { xs: "10px", md: "20px" }, // Added responsive padding
+                padding: { xs: "20px", md: "40px" }, // Increased padding
+                backgroundColor: "#ffffff", // Changed background color
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Added box shadow
               }}
             >
               <Typography
@@ -58,7 +56,7 @@ const HeroArea = () => {
                   fontSize: { xs: "1.2rem", md: "1.5rem" },
                   marginBottom: 3,
                   textAlign: "left",
-                  color: "#FD5E53",
+                  color: "#000000", // Changed text color
                   lineHeight: "1.5",
                 }}
               >
@@ -67,55 +65,49 @@ const HeroArea = () => {
               </Typography>
               <Box
                 display="flex"
-                flexDirection="row"
+                flexDirection={{ xs: "column", md: "row" }} // Adjusted flex direction for responsiveness
                 alignItems="center"
                 mt={2}
               >
-                <Box
-                  component="div"
+                <Button
+                  variant="contained"
+                  component={Link}
+                  to={"/interfaces"}
                   sx={{
                     marginRight: { xs: 0, md: 2 },
-                    padding: "10px",
+                    marginBottom: { xs: 2, md: 0 },
                     borderRadius: "5px",
-                    backgroundColor: "#4CAF50",
-                    cursor: "pointer",
-                    transition: "background-color 0.3s",
+                    backgroundColor: "#21BF73", // Changed button color
+                    color: "#FFFFFF", // Changed text color
                     "&:hover": {
-                      backgroundColor: "#388E3C",
+                      backgroundColor: "#388E3C", // Changed hover color
                     },
                   }}
                 >
-                  <Link to={"/interfaces"} style={{ textDecoration: 'none' }}>
-                    <Typography variant="button" color="white">
-                      استكشاف التنزيلات مجانًا
-                    </Typography>
-                  </Link>
-                </Box>
-                <Box
-                  component="div"
+                  استكشاف التنزيلات مجانًا
+                </Button>
+                <Button
+                  variant="outlined"
+                  component={Link}
+                  to={"/about-us"}
                   sx={{
-                    padding: "10px",
                     borderRadius: "5px",
-                    border: "2px solid #f44336",
-                    cursor: "pointer",
-                    transition: "border-color 0.3s",
+                    borderColor: "#f44336", // Changed border color
+                    color: "#f44336", // Changed text color
                     "&:hover": {
-                      borderColor: "#D32F2F",
+                      borderColor: "#D32F2F", // Changed hover border color
+                      backgroundColor: "#FEE9EB", // Changed hover background color
                     },
                   }}
                 >
-                  <Link to={"/about-us"} style={{ textDecoration: 'none' }}>
-                    <Typography variant="button" color="#f44336">
-                      من نحن ؟
-                    </Typography>
-                  </Link>
-                </Box>
+                  من نحن ؟
+                </Button>
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </Box>
   );
 };
 

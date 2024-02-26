@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { Home, Search, Info, Mail, Menu, Close } from "@mui/icons-material";
 import "./NavBar.css";
 import logo from "../../../assets/logo.png";
+import freePalsetine from "../../../../assets/freePalsetine.png"; // Import the Free Palestine image
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -28,6 +29,8 @@ const Navbar = () => {
       sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}
     >
       <Toolbar>
+        {/* Free Palestine Image */}
+
         <Grid container alignItems="center">
           <Grid item xs={4} md={2}>
             <IconButton
@@ -48,6 +51,12 @@ const Navbar = () => {
                 style={{ marginRight: "10px" }}
               />
               AlgeriDocs
+              <img
+                src={freePalsetine}
+                alt="Free Palestine"
+                style={{ marginRight: "auto" }}
+                width={60}
+              />
             </Typography>
           </Grid>
           <Grid item xs={4} md={2} sx={{ display: { xs: "flex", md: "none" } }}>
@@ -63,6 +72,12 @@ const Navbar = () => {
                 height={"60px"}
               />
               AlgeriDocs
+              <img
+                src={freePalsetine}
+                alt="Free Palestine"
+                style={{ marginRight: "auto", display: "block" }}
+                width={60}
+              />
             </Typography>
           </Grid>
 

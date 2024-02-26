@@ -1,4 +1,4 @@
-import { Footer, HeroArea, Navbar, SearchBar, Usage } from "../../components/";
+import { Footer, HeroArea, Navbar, Usage } from "../../components/";
 
 const Home = () => {
   return (
@@ -6,7 +6,6 @@ const Home = () => {
       <Navbar />
       <HeroArea />
       <Usage />
-      <SearchBar />
       <Footer />
     </div>
   );

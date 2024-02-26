@@ -7,19 +7,22 @@ import {
   InputAdornment,
   Autocomplete,
   Button,
+  CircularProgress,
 } from "@mui/material";
 import { SearchOutlined } from "@mui/icons-material";
-import Style from "./SearchBarStyle"; // Assuming you have a separate file for styles
+import Style from "./SearchBarStyle";
 
 const SearchBar = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [interfacesData, setInterfacesData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const response = await fetch(
           `https://algeridoc.adaptable.app/interfaces`
         );
@@ -31,6 +34,8 @@ const SearchBar = () => {
         setSearchResults(data.map((item) => item.title));
       } catch (error) {
         console.error("Error fetching interfaces:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -53,7 +58,7 @@ const SearchBar = () => {
 
   return (
     <form onSubmit={handleSearch}>
-      <Container maxWidth="xl" sx={Style.Container}>
+      <Container maxWidth="md"> {/* Adjusted maxWidth */}
         <Box sx={Style.Box}>
           <Autocomplete
             options={searchResults.slice(0, 5)} // Limit results to 5
@@ -67,13 +72,17 @@ const SearchBar = () => {
                 fullWidth
                 variant="outlined"
                 id="SearchInput"
+                placeholder="Search for interfaces..."
                 InputProps={{
                   ...params.InputProps,
                   startAdornment: (
                     <InputAdornment position="start">
-                      <SearchOutlined sx={{ color: "#FD5E53" }} />
+                      <SearchOutlined />
                     </InputAdornment>
                   ),
+                  endAdornment: loading && (
+                    <CircularProgress color="inherit" size={20} />
+                  ), // Show loading spinner while fetching data
                 }}
               />
             )}
@@ -81,7 +90,8 @@ const SearchBar = () => {
           <Button
             type="submit"
             variant="contained"
-            sx={{ backgroundColor: "#21BF73", color: "#F9FCFB" }}
+            sx={{ bgcolor: "#21BF73", color: "#F9FCFB", minWidth: "120px" }} // Adjusted width
+            disabled={loading} // Disable button while loading
           >
             Search
           </Button>

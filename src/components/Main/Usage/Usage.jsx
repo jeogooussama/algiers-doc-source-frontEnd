@@ -13,8 +13,6 @@ import {
   EmojiEvents,
   Help,
 } from "@mui/icons-material";
-import ArrowUp from "../../../assets/arrowUp.png";
-import ArrowDown from "../../../assets/arrowDown.png";
 import "./Usage.css";
 
 const Usage = () => {
@@ -22,7 +20,7 @@ const Usage = () => {
     <Container
       maxWidth="xl"
       sx={{
-        backgroundColor: "#B0EACD",
+        backgroundColor: "#F4F4F4", // Updated background color
         padding: "40px 0",
         textAlign: "center",
         direction: "rtl",
@@ -30,7 +28,7 @@ const Usage = () => {
     >
       <Box
         sx={{
-          color: "#FD5E53",
+          color: "#4CAF50", // Updated color for icon and title
           textAlign: "center",
           alignItems: "center",
           display: "flex",
@@ -38,7 +36,7 @@ const Usage = () => {
           gap: 1,
         }}
       >
-        <Help />
+        <Help sx={{ color: "#FD5E53" }} /> {/* Updated color for help icon */}
         <Typography variant="h5" sx={{ color: "#FD5E53" }}>
           كيفية الاستخدام
         </Typography>
@@ -49,14 +47,8 @@ const Usage = () => {
         justifyContent="space-around"
         alignItems="center"
         mt={4}
+        position="relative"
       >
-        <img
-          className="firstArrow"
-          alt=""
-          srcSet={ArrowDown}
-          width={"200px"}
-          style={{ position: "absolute", left: 300, top: 550 }}
-        />
         <Card
           sx={{
             width: 200,
@@ -64,24 +56,18 @@ const Usage = () => {
             borderRadius: 10,
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
-            backgroundColor: "#F9FCFB", // Updated color
+            backgroundColor: "#FFFFFF",
           }}
         >
           <CardContent>
-            <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
+            <IconButton sx={{ fontSize: 50, color: "#FD5E53", mb: 2 }}>
               <Assignment />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center" }}>
-              اكتشف مجموعة متنوعة من الواجهات{" "}
+              اكتشف مجموعة متنوعة من الواجهات
             </Typography>
           </CardContent>
         </Card>
-        <img
-          alt=""
-          srcSet={ArrowUp}
-          width={"200px"}
-          style={{ position: "absolute", bottom: -230 }}
-        />
 
         <Card
           sx={{
@@ -91,24 +77,18 @@ const Usage = () => {
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
             mr: { xs: 0, md: 2 },
-            backgroundColor: "#FD5E53", // Updated color
+            backgroundColor: "#FFFFFF",
           }}
         >
           <CardContent>
-            <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
+            <IconButton sx={{ fontSize: 50, color: "#FD5E53", mb: 2 }}>
               <GetApp />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center" }}>
-              تحميل بتنسيق Word أو PDF{" "}
+              تحميل بتنسيق Word أو PDF
             </Typography>
           </CardContent>
         </Card>
-        <img
-          alt=""
-          srcSet={ArrowDown}
-          width={"200px"}
-          style={{ position: "absolute", right: 300, top: 550 }}
-        />
 
         <Card
           sx={{
@@ -118,11 +98,11 @@ const Usage = () => {
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             mb: 2,
             mr: { xs: 0, md: 2 },
-            backgroundColor: "#4CAF50", // Updated color
+            backgroundColor: "#FFFFFF",
           }}
         >
           <CardContent>
-            <IconButton sx={{ fontSize: 50, color: "#F9FCFB", mb: 2 }}>
+            <IconButton sx={{ fontSize: 50, color: "#FD5E53", mb: 2 }}>
               <Edit />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center" }}>
@@ -136,15 +116,15 @@ const Usage = () => {
             height: 300,
             borderRadius: 10,
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-            backgroundColor: "#F9FCFB", // Updated color
+            backgroundColor: "#FFFFFF",
           }}
         >
           <CardContent>
-            <IconButton sx={{ fontSize: 50, color: "#21BF73", mb: 2 }}>
+            <IconButton sx={{ fontSize: 50, color: "#FD5E53", mb: 2 }}>
               <EmojiEvents />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center" }}>
-              تحقيق النجاح في دراستك{" "}
+              تحقيق النجاح في دراستك
             </Typography>
           </CardContent>
         </Card>

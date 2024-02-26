@@ -1,65 +1,91 @@
 import { useState, useEffect } from "react";
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, Typography, Box } from "@mui/material";
 import { Footer, InterfacesContainer, Navbar } from "../../components";
 import InterfaceFilter from "./InterfaceFilter";
+import axios from "axios";
 
 const InterFaces = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [interfaces, setInterfaces] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory((prevCategory) =>
-      prevCategory === category ? "" : category === "واجهة" ? "interface" : category === "ورق مخطط" ? "lined_paper" : category
-    );
-  };
-
-  const handleLanguageSelect = (language) => {
-    setSelectedLanguage(language);
-  };
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-  };
+  const handleCategorySelect = (category) =>
+    setSelectedCategory(category === selectedCategory ? "" : category);
+  const handleLanguageSelect = (language) =>
+    setSelectedLanguage(language === selectedLanguage ? "" : language);
+  const handleCitySelect = (city) => setSelectedCity(city === selectedCity ? "" : city);
+  const handleSearch = (term) => setSearchTerm(term);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://algeridoc.adaptable.app/interfaces`);
-        if (!response.ok) {
+        const params = new URLSearchParams({
+          ...(selectedCity && { city: selectedCity }),
+          ...(selectedCategory && { category: selectedCategory }),
+          ...(selectedLanguage && { language: selectedLanguage }),
+          ...(searchTerm && { search: searchTerm }),
+        });
+
+        const response = await axios.get(
+          `https://algeridoc.adaptable.app/interfaces?${params}`
+        );
+
+        if (!response.data || response.status !== 200)
           throw new Error("Failed to fetch interfaces");
-        }
-        const data = await response.json();
-        setInterfaces(data);
+
+        setInterfaces(response.data);
       } catch (error) {
         console.error("Error fetching interfaces:", error);
       } finally {
         setIsLoading(false);
       }
     };
+
     fetchData();
-  }, []);
+  }, [selectedCategory, selectedLanguage, selectedCity, searchTerm]);
 
   const filteredInterfaces = interfaces.filter(
     (item) =>
-      (selectedCategory === "" || item.type === selectedCategory) &&
-      (selectedLanguage === "" || item.language === selectedLanguage) &&
-      (searchTerm === "" || item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (!selectedCategory || item.category === selectedCategory) &&
+      (!selectedLanguage || item.language === selectedLanguage) &&
+      (!selectedCity || item.city === selectedCity)
   );
 
   return (
     <>
       <Navbar />
-      <InterfaceFilter onSelect={handleCategorySelect} onSearch={handleSearch} onLanguageSelect={handleLanguageSelect} />
-      <Container maxWidth="xl" sx={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "60vh" }}>
-        {isLoading ? (
-          <CircularProgress />
-        ) : (
-          <InterfacesContainer interfaces={filteredInterfaces} />
-        )}
-      </Container>
+      <InterfaceFilter
+        onSelect={handleCategorySelect}
+        onSearch={handleSearch}
+        onLanguageSelect={handleLanguageSelect}
+        onCitySelect={handleCitySelect}
+      />
+      <Box bgcolor="#F9FCFB">
+        <Container maxWidth="xl" sx={{ minHeight: "60vh", p: 0 }}>
+          {isLoading ? (
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              minHeight="60vh"
+            >
+              <CircularProgress />
+            </Box>
+          ) : (
+            <>
+              {filteredInterfaces.length === 0 ? (
+                <Typography variant="h5">No files found with the selected filters.</Typography>
+              ) : (
+                <InterfacesContainer interfaces={filteredInterfaces} />
+              )}
+            </>
+          )}
+        </Container>
+      </Box>
       <Footer />
     </>
   );
