@@ -1,9 +1,9 @@
-import { Grid, CircularProgress } from "@mui/material";
+import { Grid, CircularProgress, Typography } from "@mui/material";
 import InterfaceCard from "../InterfaceCard/InterfaceCard";
 
 const InterfacesContainer = ({ interfaces }) => {
-  if (interfaces?.length === 0) {
-    // If interfaces array is empty or loading, show CircularProgress
+  if (!interfaces) {
+    // If interfaces data is not provided yet, show CircularProgress
     return (
       <Grid
         container
@@ -17,20 +17,28 @@ const InterfacesContainer = ({ interfaces }) => {
     );
   }
 
+  if (interfaces.length === 0) {
+    // If interfaces array is empty, show a message
+    return (
+      <Typography variant="h5" align="center" mt={3}>
+        No interfaces available.
+      </Typography>
+    );
+  }
+
   return (
     <Grid
       container
       mt={3}
       display={"flex"}
       justifyContent={"center"}
-      bgcolor="#F9FCFB" // Set background color
+      bgcolor="#F9FCFB"
     >
-      {interfaces?.map((interfaceData) => (
+      {interfaces.map((interfaceData) => (
         <Grid
           key={interfaceData._id}
           item
           width={"100%"}
-     
           xs={6}
           sm={6}
           md={4}

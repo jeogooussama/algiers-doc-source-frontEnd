@@ -1,6 +1,8 @@
 import { Container, Typography, Paper, Box, Grid, Button } from "@mui/material";
 
-const InterfaceDetails = ({ title, description, language, downloadLinks, image }) => {
+const InterfaceDetails = ({ title, description, downloadLinks, image }) => {
+  const isInterface = downloadLinks && downloadLinks.word && downloadLinks.pdf;
+
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
       <Paper
@@ -24,23 +26,30 @@ const InterfaceDetails = ({ title, description, language, downloadLinks, image }
             <Typography variant="h4" sx={{ marginBottom: 2, color: "#21BF73" }}>
               {title}
             </Typography>
-            <Typography variant="subtitle1" sx={{ marginBottom: 2, color: "#FD5E53" }}>
-              Language: {language}
-            </Typography>
             <Typography variant="body1" sx={{ marginBottom: 2, color: "#333" }}>
               {description}
             </Typography>
             <Box mt="auto" sx={{ textAlign: "right" }}>
-              <a href={downloadLinks.word} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Download Word
-                </Button>
-              </a>
-              <a href={downloadLinks.pdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                <Button variant="contained" color="error">
-                  Download PDF
-                </Button>
-              </a>
+              {isInterface ? (
+                <>
+                  <a href={downloadLinks.word} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                    <Button variant="contained" color="primary" sx={{ mr: 1 }}>
+                      Download Word
+                    </Button>
+                  </a>
+                  <a href={downloadLinks.pdf} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                    <Button variant="contained" color="error">
+                      Download PDF
+                    </Button>
+                  </a>
+                </>
+              ) : (
+                <a href={downloadLinks.word} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                  <Button variant="contained" color="primary">
+                    Download Word
+                  </Button>
+                </a>
+              )}
             </Box>
           </Grid>
         </Grid>
