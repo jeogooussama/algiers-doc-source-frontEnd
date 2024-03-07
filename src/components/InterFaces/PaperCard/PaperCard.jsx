@@ -2,12 +2,12 @@ import { Card, CardContent, Typography, Box, Link, Grid } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import "./InterfaceCard.css";
 
-const InterfaceCard = ({ _id, title, language, image }) => {
+const PaperCard = ({ _id, title, language, image }) => {
   return (
     <Grid item xs={6} sm={6} md={4} lg={3} xl={2}>
       <Link
         component={RouterLink}
-        to={`/interfaces/${_id}`}
+        to={`/paper/${_id}`}
         underline="none"
         sx={{ width: "100%" }}
       >
@@ -73,4 +73,4 @@ const InterfaceCard = ({ _id, title, language, image }) => {
   );
 };
 
-export default InterfaceCard;
+export default PaperCard;

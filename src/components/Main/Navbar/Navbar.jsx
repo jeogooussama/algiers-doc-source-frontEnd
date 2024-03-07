@@ -104,13 +104,13 @@ const Navbar = () => {
               <Grid item>
                 <IconButton
                   component={Link}
-                  to={`/interfaces`}
+                  to={`/paper`}
                   className="Button"
                   sx={{ color: "#F9FCFB", gap: 1 }}
                 >
                   <Search />
                   <Typography variant="caption" sx={{ color: "#F9FCFB" }}>
-                    واجهات
+                    اوراق
                   </Typography>
                 </IconButton>
               </Grid>
@@ -158,12 +158,12 @@ const Navbar = () => {
             <ListItem
               button
               component={Link}
-              to={`/interfaces`}
+              to={`/paper`}
               onClick={toggleDrawer}
               sx={{ gap: 1 }}
             >
               <Search sx={{ color: "#FD5E53" }} />
-              <ListItemText primary={"واجهات"} />
+              <ListItemText primary={"اوراق"} />
             </ListItem>
             <ListItem
               button

@@ -1,6 +1,6 @@
 import { Container, Typography, Paper, Box, Grid, Button } from "@mui/material";
 
-const InterfaceDetails = ({ title, description, language, downloadLinks, image }) => {
+const PaperDetails = ({ title, description, language, downloadLinks, image }) => {
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
       <Paper
@@ -49,4 +49,4 @@ const InterfaceDetails = ({ title, description, language, downloadLinks, image }
   );
 };
 
-export default InterfaceDetails;
+export default PaperDetails;
