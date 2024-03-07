@@ -16,25 +16,23 @@ const PaperCard = ({ _id, title, language, image }) => {
             borderRadius: 8,
             boxShadow: 4,
             position: "relative",
-            height: "360px", // Changed height to auto for flexibility
-            width: "240px", // Set width to auto to take only its space
-            marginBottom: 2, // Add margin between cards
+            height: "360px",
+            width: "240px",
+            marginBottom: 2,
             border: "2px solid #2e7d32",
             transition: "border-color 0.3s, box-shadow 0.3s",
             "&:hover": {
               borderColor: "#2e7d32",
               boxShadow: "0 0 10px #2e7d32",
               "& .card-content": {
-                transform: "translateY(0%)", // Show card content on hover
+                transform: "translateY(0%)",
               },
             },
             "@media (max-width: 960px)": {
-              // On small screens, make the card smaller
               width: "200px",
               height: "300px",
             },
             "@media (max-width: 600px)": {
-              // On extra small screens, make the card even smaller
               width: "180px",
               height: "240px",
             },
@@ -43,13 +41,13 @@ const PaperCard = ({ _id, title, language, image }) => {
           <Box
             component="img"
             alt={title}
-            srcSet={image} // Use the actual image URL from your API response
+            srcSet={image}
             sx={{
               display: "block",
               width: "100%",
               height: "auto",
               objectFit: "cover",
-              borderRadius: "8px 8px 0 0", // Rounded corners only at the top
+              borderRadius: "8px 8px 0 0",
               transition: "transform 0.3s",
               "&:hover": {
                 transform: "scale(1.1)",
@@ -57,8 +55,8 @@ const PaperCard = ({ _id, title, language, image }) => {
             }}
           />
           <CardContent
-            className="card-content" // Added class for targeting
-            sx={{ padding: "12px", transform: "translateY(100%)" }} // Initially hide card content
+            className="card-content"
+            sx={{ padding: "12px", transform: "translateY(100%)" }}
           >
             <Typography variant="h6" color="#21BF73">
               {title}

@@ -1,5 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, AboutUs, ContactUs, Paper, PaperDetails } from "./pages/index";
+import {
+  Home,
+  AboutUs,
+  ContactUs,
+  Paper,
+  PaperDetails,
+} from "./pages/index";
 import "./App.css";
 
 const App = () => {
