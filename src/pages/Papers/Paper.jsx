@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { CircularProgress, Container, Box } from "@mui/material";
 import { Footer, PaperContainer, Navbar } from "../../components";
 import axios from "axios";
@@ -47,7 +47,7 @@ const Paper = () => {
     <>
       <Navbar />
       <Box bgcolor="#F9FCFB">
-        <Container maxWidth="xl" sx={{ minHeight: "60vh", pt:10 }}>
+        <Container maxWidth="xl" sx={{ minHeight: "60vh", pt: 10 }}>
           {isLoading ? (
             <Box
               display="flex"

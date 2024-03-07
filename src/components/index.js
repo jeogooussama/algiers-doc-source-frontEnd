@@ -3,8 +3,8 @@ import HeroArea from "./Main/HeroArea/HeroArea";
 import Usage from "./Main/Usage/Usage";
 import SearchBar from "./SearchBar/SearchBar";
 import Footer from "./Main//Footer/Footer";
-import PaperContainer from "./InterFaces/PaperContainer/PaperContainer";
-import PaperDetails from "./InterFaces/InterfaceDetails/PaperDetails";
-import DownloadButton from "./InterFaces/InterfaceDetails/DownloadButton";
+import PaperContainer from "./Papers/PaperContainer/PaperContainer";
+import PaperDetails from "./Papers/PaperDetails/PaperDetails";
+import DownloadButton from "./Papers/PaperDetails/DownloadButton";
 
 export { Navbar, HeroArea, Usage, SearchBar, Footer,PaperContainer,PaperDetails,DownloadButton,};

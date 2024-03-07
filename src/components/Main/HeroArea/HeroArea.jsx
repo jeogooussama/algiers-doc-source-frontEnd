@@ -72,7 +72,7 @@ const HeroArea = () => {
                 <Button
                   variant="contained"
                   component={Link}
-                  to={"/interfaces"}
+                  to={"/paper"}
                   sx={{
                     marginRight: { xs: 0, md: 2 },
                     marginBottom: { xs: 2, md: 0 },
