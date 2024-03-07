@@ -11,7 +11,7 @@ import {
   Grid,
 } from "@mui/material/";
 import { Link } from "react-router-dom";
-import { Home, FileCopy, Info, Mail, Menu, Close, } from "@mui/icons-material";
+import { Home, FileCopy, Info, Mail, Menu, Close, Search, } from "@mui/icons-material";
 import "./NavBar.css";
 import logo from "../../../assets/logo.png";
 import freePalsetine from "../../../../assets/freePalsetine.png"; // Import the Free Palestine image
@@ -162,13 +162,8 @@ const Navbar = () => {
               onClick={toggleDrawer}
               sx={{ gap: 1 }}
             >
-<<<<<<< HEAD
               <Search sx={{ color: "#FD5E53" }} />
               <ListItemText primary={"اوراق"} />
-=======
-              <FileCopy sx={{ color: "#FD5E53" }} />
-              <ListItemText primary={"واجهات"} />
->>>>>>> 05709aaf045735c3d08df5c0a5e1ed8a62a87588
             </ListItem>
             <ListItem
               button

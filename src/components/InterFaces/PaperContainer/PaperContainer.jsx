@@ -1,17 +1,8 @@
-<<<<<<< HEAD:src/components/InterFaces/PaperContainer/PaperContainer.jsx
 import { Grid, CircularProgress } from "@mui/material";
 import PaperCard from "../PaperCard/PaperCard";
 
 const PaperContainer = ({ data }) => {
   if (data?.length === 0) {
-=======
-import { Grid, CircularProgress, Typography } from "@mui/material";
-import InterfaceCard from "../InterfaceCard/InterfaceCard";
-
-const InterfacesContainer = ({ interfaces }) => {
-  if (!interfaces) {
-    // If interfaces data is not provided yet, show CircularProgress
->>>>>>> 05709aaf045735c3d08df5c0a5e1ed8a62a87588:src/components/InterFaces/InterfacesContainer/InterfacesContainer.jsx
     return (
       <Grid
         container

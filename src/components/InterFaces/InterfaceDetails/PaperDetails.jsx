@@ -1,12 +1,6 @@
 import { Container, Typography, Paper, Box, Grid, Button } from "@mui/material";
 
-<<<<<<< HEAD:src/components/InterFaces/InterfaceDetails/PaperDetails.jsx
 const PaperDetails = ({ title, description, language, downloadLinks, image }) => {
-=======
-const InterfaceDetails = ({ title, description, downloadLinks, image }) => {
-  const isInterface = downloadLinks && downloadLinks.word && downloadLinks.pdf;
-
->>>>>>> 05709aaf045735c3d08df5c0a5e1ed8a62a87588:src/components/InterFaces/InterfaceDetails/InterfaceDetails.jsx
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 10 }}>
       <Paper
