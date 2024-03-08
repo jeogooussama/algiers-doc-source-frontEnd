@@ -39,10 +39,22 @@ const HeroArea = () => {
               }}
             >
               <Typography
-                variant="h2"
+                variant="h1"
                 color="#21BF73"
                 sx={{
                   fontSize: { xs: "2rem", md: "3rem" },
+                  fontWeight: 700,
+                  marginBottom: 2,
+                  textAlign: "left",
+                }}
+              >
+                Welcome to AlgeriDocs
+              </Typography>
+              <Typography
+                variant="h2"
+                color="#21BF73"
+                sx={{
+                  fontSize: { xs: "1.5rem", md: "2rem" },
                   fontWeight: 700,
                   marginBottom: 2,
                   textAlign: "left",
@@ -110,5 +122,4 @@ const HeroArea = () => {
     </Box>
   );
 };
-
 export default HeroArea;

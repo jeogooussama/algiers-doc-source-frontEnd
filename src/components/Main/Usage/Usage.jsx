@@ -37,9 +37,7 @@ const Usage = () => {
         }}
       >
         <Help sx={{ color: "#FD5E53" }} /> {/* Updated color for help icon */}
-        <Typography variant="h5" sx={{ color: "#FD5E53" }}>
-          كيفية الاستخدام
-        </Typography>
+        <h1 style={{ color: "#FD5E53" }}> كيفية الاستخدام</h1>
       </Box>
       <Box
         display="flex"
