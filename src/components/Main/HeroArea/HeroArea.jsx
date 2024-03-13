@@ -14,6 +14,7 @@ const HeroArea = () => {
         backgroundColor: "#F9FCFB", // Changed background color
       }}
     >
+      <h1 style={{ display: "none" }}></h1>
       <Container maxWidth="xl">
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} md={6}>

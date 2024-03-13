@@ -2,7 +2,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { PaperDetails, Navbar, Footer } from "../../components";
 import axios from "axios";
-import { CircularProgress, Container, Box, Typography } from "@mui/material";
+import {
+  CircularProgress,
+  Container,
+  Box,
+  Typography,
+  Grid,
+} from "@mui/material";
 
 const PaperDetailsPage = () => {
   const { id } = useParams();
@@ -53,7 +59,7 @@ const PaperDetailsPage = () => {
   return (
     <div>
       <Navbar />
-      <Box sx={{ backgroundColor: "#F9FCFB" }}>
+      <Box sx={{ backgroundColor: "#F9FCFB", py: 4 }}>
         <Container maxWidth="lg">
           {isLoading ? (
             // Render loading indicator if data is still loading
@@ -66,15 +72,19 @@ const PaperDetailsPage = () => {
               <CircularProgress />
             </Box>
           ) : (
-            <>
-              {paperData ? (
-                <PaperDetails {...paperData} />
-              ) : (
-                <Typography variant="h5" align="center">
-                  Data not found.
-                </Typography>
-              )}
-            </>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Box p={2}>
+                  {paperData ? (
+                    <PaperDetails {...paperData} />
+                  ) : (
+                    <Typography variant="h5" align="center">
+                      Data not found.
+                    </Typography>
+                  )}
+                </Box>
+              </Grid>
+            </Grid>
           )}
         </Container>
       </Box>
