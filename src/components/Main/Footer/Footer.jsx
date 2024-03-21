@@ -96,14 +96,14 @@ const Footer = () => {
           </Box>
         </Grid>
       </Grid>
-
-      {/* Free Palestine Image */}
-      <img
-        src={freePalsetine}
-        alt="Free Palestine"
-        style={{ height: 50, marginTop: 10, width: 60, display: "block" }}
-      />
-
+      <h1 style={{ display: "flex", justifyContent: "center" }}>
+        {/* Free Palestine Image */}
+        <img
+          src={freePalsetine}
+          alt="Free Palestine"
+          style={{ height: 50, marginTop: 10, width: 60, display: "block" }}
+        />
+      </h1>
       {/* Copyright */}
       <Box sx={{ marginTop: 3 }}>
         <Typography variant="body2">

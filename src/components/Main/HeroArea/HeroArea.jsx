@@ -14,7 +14,6 @@ const HeroArea = () => {
         backgroundColor: "#F9FCFB", // Changed background color
       }}
     >
-      <h1 style={{ display: "none" }}></h1>
       <Container maxWidth="xl">
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} md={6}>
@@ -39,18 +38,18 @@ const HeroArea = () => {
                 boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Added box shadow
               }}
             >
-              <Typography
-                variant="h1"
-                color="#21BF73"
-                sx={{
-                  fontSize: { xs: "2rem", md: "3rem" },
+              <h1
+                style={{
+                  color: "#21BF73",
+                  fontSize: "2rem",
                   fontWeight: 700,
                   marginBottom: 2,
-                  textAlign: "left",
+                  textAlign: "center",
+                  padding: "1rem",
                 }}
               >
                 Welcome to AlgeriDocs
-              </Typography>
+              </h1>
               <Typography
                 variant="h2"
                 color="#21BF73"
@@ -58,17 +57,17 @@ const HeroArea = () => {
                   fontSize: { xs: "1.5rem", md: "2rem" },
                   fontWeight: 700,
                   marginBottom: 2,
-                  textAlign: "left",
+                  textAlign: "right",
                 }}
               >
-                رفع دراستك مع واجهات البحث المجانية{" "}
+                اختصر وقتك معنا للحصول على كل الاوراق اللازمة لك{" "}
               </Typography>
               <Typography
                 variant="body1"
                 sx={{
                   fontSize: { xs: "1.2rem", md: "1.5rem" },
                   marginBottom: 3,
-                  textAlign: "left",
+                  textAlign: "right",
                   color: "#000000", // Changed text color
                   lineHeight: "1.5",
                 }}
@@ -97,7 +96,7 @@ const HeroArea = () => {
                     },
                   }}
                 >
-                  استكشاف التنزيلات مجانًا
+                  اظغط هنا للحصول على اوراقك
                 </Button>
                 <Button
                   variant="outlined"

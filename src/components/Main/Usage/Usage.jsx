@@ -5,6 +5,7 @@ import {
   Typography,
   Box,
   IconButton,
+  Button,
 } from "@mui/material";
 import {
   Assignment,
@@ -14,6 +15,7 @@ import {
   Help,
 } from "@mui/icons-material";
 import "./Usage.css";
+import { Link } from "react-router-dom";
 
 const Usage = () => {
   return (
@@ -37,7 +39,7 @@ const Usage = () => {
         }}
       >
         <Help sx={{ color: "#FD5E53" }} /> {/* Updated color for help icon */}
-        <h1 style={{ color: "#FD5E53" }}> كيفية الاستخدام</h1>
+        <h1 style={{ color: "#FD5E53", fontSize: "30px" }}> كيفية الاستخدام</h1>
       </Box>
       <Box
         display="flex"
@@ -62,7 +64,19 @@ const Usage = () => {
               <Assignment />
             </IconButton>
             <Typography variant="h6" sx={{ textAlign: "center" }}>
-              اكتشف مجموعة متنوعة من الواجهات
+              اكتشف مجموعة متنوعة من
+            </Typography>
+            <Typography variant="h6" sx={{ textAlign: "center" }}>
+              <Button
+                variant="contained"
+                href="/paper"
+                sx={{
+                  background: "#21BF73",
+                  "&:hover": { background: "#21BF73" },
+                }}
+              >
+                الواجهات
+              </Button>
             </Typography>
           </CardContent>
         </Card>
